@@ -116,10 +116,9 @@ function checaRenovacaoRG() {
 }
 
 // EXERCÍCIO 14
-function checaAnoBissexto(ano) {
-  // implemente sua lógica aqui
 
-}
+
+
 
 // EXERCÍCIO 15
 function checaValidadeInscricaoLabenu() {
