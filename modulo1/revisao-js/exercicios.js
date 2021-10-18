@@ -11,14 +11,20 @@ function retornaTamanhoArray(array) {
 }
 retornaTamanhoArray[1,2,3,4,5]
 // EXERCÍCIO 02
+//Escreva uma função que recebe um array como 
+//parâmetro e retorne este array invertido.
 function retornaArrayInvertido(array) {
-  
+  return array.reverse()
 }
+retornaArrayInvertido[8, 23, 16, 10]
 
 // EXERCÍCIO 03
+//Escreva uma função que recebe um array de números 
+//e retorne o array com os números em ordem crescente.
 function retornaArrayOrdenado(array) {
-  
+ 
 }
+
 
 // EXERCÍCIO 04
 function retornaNumerosPares(array) {
