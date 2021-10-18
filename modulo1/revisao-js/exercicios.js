@@ -32,27 +32,43 @@ retornaArrayOrdenado[3, 2, 1, 4, 7]
 
 const arrayPares = []
 function retornaNumerosPares(array) {
-    for (let i = 0; i < array.length; i++) {
-        if(array[i] % 2 === 0){
-            return retornaNumerosPares
-        }
-            }
-    console.log(arrayPares.push(retornaNumerosPares))
-
-// EXERCÍCIO 05
-function retornaNumerosParesElevadosADois(array) {
- 
-}
-
-// EXERCÍCIO 06
-function retornaMaiorNumero(array) {
   
 }
+// EXERCÍCIO 05
+//Escreva uma função que recebe um array de números e 
+//retorna um array com os números pares elevados a 2.
+ function retornaNumerosParesElevadosADois(array) {
+     let 
+ }
+
+// EXERCÍCIO 06
+//Escreva uma função que receba um array de números e retorne o maior número dele.
+function retornaMaiorNumero(array) {
+    let maiorNumero = 0
+    for(let i=0; i < array.length; i++){
+        if (array[i] > maiorNumero){
+            maiorNumero = array[i]
+        }
+    }
+  return maiorNumero
+}
+console.log(retornaMaiorNumero)
 
 // EXERCÍCIO 07
+//Escreva uma função que, dados dois números, 
+//retorne um objeto com as seguintes propriedades:
+// `maiorNumero` → contém o maior número
+// `maiorDivisivelPorMenor` → booleano indicando se o maior é divisível pelo menor
+// `diferenca` → contém a diferença entre eles (deve ser um **número positivo** sempre)
 function retornaObjetoEntreDoisNumeros(num1, num2) {
-
+const maiorNumero = Math.max(num1, num2)
+if (maiorNumero/!maiorNumero === 0){
+    return true
 }
+const diferença = maiorNumero - !maiorNumero
+}
+
+
 
 // EXERCÍCIO 08
 function retornaNPrimeirosPares(n) {
@@ -100,6 +116,5 @@ function retornaArrayOrdenadoAlfabeticamente(consultas) {
 }
 
 // EXERCÍCIO 15B
-function retornaArrayOrdenadoPorData(consultas) {
-   
-}
+function retornaArrayOrdenadoPorData(consultas) 
+{}
