@@ -61,13 +61,19 @@ console.log(retornaMaiorNumero)
 // `maiorDivisivelPorMenor` → booleano indicando se o maior é divisível pelo menor
 // `diferenca` → contém a diferença entre eles (deve ser um **número positivo** sempre)
 function retornaObjetoEntreDoisNumeros(num1, num2) {
-const maiorNumero = Math.max(num1, num2)
-if (maiorNumero/!maiorNumero === 0){
-    return true
-}
-const diferença = maiorNumero - !maiorNumero
-}
-
+    if (num1>num2){
+        maior=num1
+        menor= num2
+    }else if (num1<num2) {
+        maior=num2
+        menor=num1       
+    }}
+        let objeto = {
+    maiorNumero = maior,
+    maiorDivisivelPorMenor = maior % menor === 0,
+    diferenca = maior-menor
+            }  
+console.log(`Maior Numero ${maiorNumero}, maiorDivisivelPorMenor ${maiorDivisivelPorMenor }, diferenca ${diferenca} `)
 
 
 // EXERCÍCIO 08
@@ -82,7 +88,11 @@ function classificaTriangulo(ladoA, ladoB, ladoC) {
 
 // EXERCÍCIO 10
 function retornaSegundoMaiorESegundoMenor(array) {
-  
+    let menorNum= Math.min(...array)
+    let maiorNum= Math.max(...array)
+    const index= array.splice(array.indexOf(maiorNUm))
+    const index= array.splice(array.index(menorNum))
+    console.log(index2)
 }
 
 // EXERCÍCIO 11
