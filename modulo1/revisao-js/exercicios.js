@@ -27,9 +27,17 @@ function retornaArrayOrdenado(array) {
 retornaArrayOrdenado[3, 2, 1, 4, 7]
 
 // EXERCÍCIO 04
+//Escreva uma função que receba um array de números e 
+//retorne um novo array com apenas os números pares desse array de entrada.
+
+const arrayPares = []
 function retornaNumerosPares(array) {
-  
-}
+    for (let i = 0; i < array.length; i++) {
+        if(array[i] % 2 === 0){
+            return retornaNumerosPares
+        }
+            }
+    console.log(arrayPares.push(retornaNumerosPares))
 
 // EXERCÍCIO 05
 function retornaNumerosParesElevadosADois(array) {
