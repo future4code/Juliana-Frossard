@@ -22,9 +22,9 @@ retornaArrayInvertido[8, 23, 16, 10]
 //Escreva uma função que recebe um array de números 
 //e retorne o array com os números em ordem crescente.
 function retornaArrayOrdenado(array) {
- 
+ return array.sort((a, b) => a - b)
 }
-
+retornaArrayOrdenado[3, 2, 1, 4, 7]
 
 // EXERCÍCIO 04
 function retornaNumerosPares(array) {
