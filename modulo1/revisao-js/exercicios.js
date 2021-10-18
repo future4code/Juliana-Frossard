@@ -83,18 +83,25 @@ function retornaNPrimeirosPares(n) {
 
 // EXERCÍCIO 09
 function classificaTriangulo(ladoA, ladoB, ladoC) {
-
-}
+if (ladoA === ladoB && ladoB === ladoC && ladoC === ladoA){
+    return equilatero
+} else if (ladoA === ladoB || ladoB === ladoC || ladoC === ladoA){
+    return isoceles
+} else if (ladoA !==ladoB && ladoB!== ladoC && ladoC!==ladoA){
+    return escaleno
+} }
 
 // EXERCÍCIO 10
 function retornaSegundoMaiorESegundoMenor(array) {
-    let menorNum= Math.min(...array)
-    let maiorNum= Math.max(...array)
+    let menorNUm= Math.min(...array)
+    let maiorNUm= Math.max(...array)
     const index= array.splice(array.indexOf(maiorNUm))
-    const index= array.splice(array.index(menorNum))
-    console.log(index2)
+    const index2= array.splice(array.indexOf(menorNUm))
+    console.log(index, index2)
+    let menorNUm= Math.min(...array)
+    let maiorNUm= Math.max(...array)
 }
-
+console.log(menorNUm, maiorNUm)
 // EXERCÍCIO 11
 function retornaChamadaDeFilme(filme) {
    
