@@ -125,18 +125,52 @@ return {...usuario, nome: "anonimo"}
 }
 
 // EXERCÍCIO 13A
+const pessoasNaFila=[
+    { nome: "Paula", idade: 12, altura: 1.8},
+	{ nome: "João", idade: 20, altura: 1.3},
+	{ nome: "Pedro", idade: 15, altura: 1.9},
+	{ nome: "Luciano", idade: 22, altura: 1.8},
+	{ nome: "Artur", idade: 10, altura: 1.2},
+	{ nome: "Soter", idade: 70, altura: 1.9}]
 function retornaPessoasAutorizadas(pessoas) {
-   
+    const pessoasAutorizadas = 60 <pessoas.idade>14 && pessoas.altura>1.50 
+    return pessoasAutorizadas
 }
+const autorizados = pessoasNaFila.filter(retornaPessoasAutorizadas)
+console.log(pessoasAutorizadas)
 
 // EXERCÍCIO 13B
+const pessoasNaFila=[
+    { nome: "Paula", idade: 12, altura: 1.8},
+	{ nome: "João", idade: 20, altura: 1.3},
+	{ nome: "Pedro", idade: 15, altura: 1.9},
+	{ nome: "Luciano", idade: 22, altura: 1.8},
+	{ nome: "Artur", idade: 10, altura: 1.2},
+	{ nome: "Soter", idade: 70, altura: 1.9}]
 function retornaPessoasNaoAutorizadas(pessoas) {
-  
+  const retornaPessoasNaoAutorizadas = 60 >pessoas.idade<14 && pessoas.altura<1.50
+  return retornaPessoasNaoAutorizadas
 }
+const naoAutorizados = pessoasNaFila.filter(retornaPessoasNaoAutorizadas)
+console.log(naoAutorizados)
 
 // EXERCÍCIO 14
-function retornaContasComSaldoAtualizado(contas) {
+const array = [
+        { cliente: "João", saldoTotal: 1000, compras: [100, 200, 300] },
+        { cliente: "Paula", saldoTotal: 7500, compras: [200, 1040] },
+        { cliente: "Pedro", saldoTotal: 10000, compras: [5140, 6100, 100, 2000] },
+        { cliente: "Luciano", saldoTotal: 100, compras: [100, 200, 1700] },
+        { cliente: "Artur", saldoTotal: 1800, compras: [200, 300] },
+        { cliente: "Soter", saldoTotal: 1200, compras: [] }
+    ]
 
+function retornaContasComSaldoAtualizado(contas) {
+    const novoSaldo = 0
+    for (let index = 0; index < array.length; index++) {
+        soma+= array[i]
+        return novoSaldo
+    }
+console.log(novoSaldo)
 }
 
 // EXERCÍCIO 15A
