@@ -174,10 +174,18 @@ console.log(novoSaldo)
 }
 
 // EXERCÍCIO 15A
+const array = [
+    { nome: "João", dataDaConsulta: "01/10/2021" },
+    { nome: "Pedro", dataDaConsulta: "02/07/2021" },
+    { nome: "Paula", dataDaConsulta: "03/11/2021" },
+    { nome: "Márcia", dataDaConsulta: "04/05/2021" }
+  ]
 function retornaArrayOrdenadoAlfabeticamente(consultas) {
-  
+  const consultas = sort(array.nome)
+  return consultas
 }
 
 // EXERCÍCIO 15B
 function retornaArrayOrdenadoPorData(consultas) 
 {}
+
