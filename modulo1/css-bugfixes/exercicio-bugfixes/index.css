@@ -113,7 +113,7 @@ div:last-child {
 }
 #borda-de-pesquisa{
     border-style: solid black;
-    border-bottom-width: 3px;
+    border-bottom-width: 2px;
     border-top-width: 0;
     border-right-width: 0;
     border-left-width: 0;
