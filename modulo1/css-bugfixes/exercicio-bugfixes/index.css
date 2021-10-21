@@ -69,6 +69,9 @@ div>p:first-child {
 .icone {
     height: 30px;
 }
+.frase{
+    margin-top: 10px;
+}
 
 
 /** 
@@ -84,7 +87,8 @@ div>p:first-child {
 
 #container-de-descricao>ol {
     padding: 15px 0px;
-}
+    list-style: decimal;
+    }
 
 
 #container-para-comprar {
@@ -121,7 +125,7 @@ div:last-child {
 
 table {
     width: 80%;
- margin-left: auto;
+    margin-left: auto;
     margin-right: auto;
 }
 
