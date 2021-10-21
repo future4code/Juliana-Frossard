@@ -28,6 +28,9 @@ button:focus {
 img {
     width: 100px;
 }
+td{
+    text-align: center;
+}
 
 div>p:first-child {
     display: inline;
