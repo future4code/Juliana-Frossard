@@ -56,7 +56,9 @@ div>p:first-child {
 .botao-amarelo:hover {
     background-color: #c44f00;
 }
-
+.botao-amarelo:active {
+    color:white;
+}
 .container {
     height: 500px;
     text-align: center;
@@ -124,7 +126,10 @@ td button {
     margin-top: 20px;
     height: 100px;
 }
-
+.botao-amarelo-compras:hover{
+    background-color:#f3cf2d;
+    color: white;
+}
 
 #back-button {
     background-color: white;
@@ -138,4 +143,8 @@ td button {
 
 #back-button:hover {
     background-color: #635a3d
+}
+#lupa{
+    width: 30px;
+    height: 30px;
 }
