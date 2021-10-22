@@ -1,0 +1,129 @@
+body{
+    background-image: url(img/ceu.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+header{
+    height: 20px;
+}
+footer{
+    height: 20px;
+    text-align: right; 
+    text-align: end;
+}
+div{
+    height: 80px;
+}
+.bemVindo{
+    font-family: cursive ;
+    font-size: 1.5cm;
+    display: block;
+    color: steelblue;
+}
+.PagICtrAddFunc{
+    text-align: right;
+    font-size: larger;
+}
+.pula{
+    margin-right: 20px;
+}
+.pula1{
+    margin-right: 20px;
+}
+.pulaa2{
+    margin-right: 20px;
+}
+.pula3{
+    margin-right: 20px;
+    margin-left: 20px;
+}
+.galeria{
+    display: inline;
+}    
+#foto{
+    width: 8cm;
+    height: 10cm;
+    display: inline;
+}
+#foto1{
+    width: 9cm;
+    height: 10cm;
+    display: inline;
+}
+#foto2{
+    width: 8cm;
+    height: 10cm;
+    display: inline;
+}
+#foto3{
+    width: 9cm;
+    height: 10cm;
+    display: inline;
+}
+.sobreLoja{
+text-align: center;
+font-size: 8mm;
+color: rgb(57, 8, 114);
+}
+
+/*controle de estoque*/
+.nomeLoja{
+    color: steelblue;
+    font-size: 5mm;
+}
+.controleEstoque{
+    text-align: center;
+    color: rgb(57, 8, 114);
+    font-size: 12mm;
+}
+.tabelaProduto{
+    color: hsl(0, 0%, 1%);
+    text-align: center;
+}
+#foto{
+    color: steelblue;
+    font-size: 8mm;    
+}
+#descricao{
+    color: steelblue;
+    font-size: 8mm;  
+}
+#preco{
+    color: steelblue;
+    font-size: 8mm;  
+}
+#tamanhoDisponivel{
+    color: steelblue;
+    font-size: 8mm; 
+  
+}
+#quantidadeDisponivel{
+    color: steelblue;
+    font-size: 8mm;  
+}
+
+/*funcionarios*/
+.funcionarios{
+    font-size: 10mm;
+    color: steelblue;
+    display: inline;
+}
+.lista{
+    font-size: 6mm;
+    color: rgb(57, 8, 114);
+}
+#anjos{
+    font-size: 5mm;
+    color: steelblue;
+}
+.fotoEquipe{
+    display: inline;
+    width: 5cm;
+    height:10cm;
+}
+
+/*add produtos*/
+.adicionar{
+    font-size: 6mm;
+    color: rgb(57, 8, 114);
+}
