@@ -1,0 +1,225 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap");
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.links{
+width: 100%;
+height: 50px;
+position: fixed;
+display: flex;
+}
+
+.links label{
+padding: 10px 0;
+flex-grow: 1;
+cursor: pointer;
+transition: all .4s;
+text-align: center;
+font-family: 'Arial';
+font-size: 100%;
+color: #fff;
+
+}
+.links label:hover{
+background-color: rgba(255,255,255,.2);
+}
+
+.scroll{
+display: flex;
+width: 100vw;
+height: 100vh;
+overflow: hidden;
+}
+
+.sections{
+
+transition:  all .4s;
+}
+
+input{
+display: none;
+}
+.bloco{
+width: 100vw;
+height: 100vh;
+justify-content: center;
+align-items: center;
+display: flex;
+}
+
+#home{
+background-color: #7fbd42;
+background-image: url(img/fundo2.jpg);
+background-position: cover;
+background-size: 100%;
+}
+
+#sobre-mim{
+background-color:#46adb4;
+}
+#trabalhar-comigo{
+background-color: #5daeb4;
+}
+#projetos{
+background-color: #70acb1;
+}
+
+
+#contatos{
+background-color: #84aaad;
+}
+
+#rd_sobre-mim:checked ~ .sections{
+margin-top: -100vh;
+}
+#rd_trabalhar-comigo:checked ~ .sections{
+margin-top: -200vh;
+}
+
+#rd_projetos:checked ~ .sections{
+margin-top: -300vh;
+}
+
+#rd_contatos:checked ~ .sections{
+margin-top: -400vh;
+}
+
+.bloco img{
+width: 40%;
+}
+/*PAGINA INICIAL*/
+#img_pessoal{
+    width: 8cm;
+    height: 9cm;
+    border:  2px solid;
+    margin-right: 1rem;
+    margin-bottom: 6rem;
+    margin-top: 5rem;
+    margin-left: 5rem;
+    
+}
+.apresentacao{
+    width: 60rem;
+    height: 20rem;
+}
+.apresentacao1{
+    font-size: 2cm;
+    color: #42b3cf;
+    font-weight: 600;
+}
+.apresentacao2{
+    font-size: 1cm;
+    color: #11427a;
+    margin-left: 2rem;
+}
+.apresentacao3{
+    font-size: 1cm;
+    color: #11427a;
+    margin-left: 4rem;
+    text-decoration: underline; 
+}
+.apresentacao4{
+    color:#11427a;
+    font-size: 0.5cm;
+    margin-left: 7rem;
+}
+
+/*Sobre-Mim*/
+.cl_sobre-mim{
+    width: 80vw;
+    height: 100vh;
+    margin-left: 5rem;
+    margin-top: 20rem;
+    margin-bottom: 1rem;
+    font-size: 0.75cm;
+    color: #fff;
+    font-family: 'Georgia';
+    
+}
+.ul_ensino_{
+    list-style-type: none;
+    width: 100vw;
+    height: 60vh;
+    font-size: 0.55cm;
+    color: #11427a;
+    margin-left: 0rem;
+    margin-right: 5rem;
+    margin-top: 20rem;
+    margin-bottom: 2rem;
+    font-family: 'Georgia';
+}
+.cl_sobre-mim2{
+    color: #11427a;
+}
+.p_ensino{
+    width: 80vw;
+    height: 100vh;
+    margin-left: 5rem;
+    margin-top: 20rem;
+    margin-bottom: 1rem;
+    font-size: 0.75cm;
+    color: #fff;
+    font-family: 'Georgia';
+}
+.ul_ensino{
+    width: 100vw;
+    height: 60vh;
+    font-size: 0.55cm;
+    color: #11427a;
+    margin-left: 0rem;
+    margin-right: 5rem;
+    margin-top: 20rem;
+    margin-bottom: 2rem;
+    font-family: 'Georgia';
+}
+/*Trabalhar comigo*/
+.p_titulo{
+    width: 60vw;
+    height: 80vh;  
+    margin-left: 9rem;
+    margin-right: 2rem;
+    margin-top: 17rem;
+    margin-bottom: 2rem;
+    color: #11427a;
+    font-size: 0.6cm;
+    font-family: 'Georgia';
+}
+.p_titulo2{
+    width: 60vw;
+    height: 80vh;  
+    margin-left: 8rem;
+    margin-right: 5rem;
+    margin-top: 17rem;
+    margin-bottom: 2rem;
+    color: #11427a;
+    font-size: 0.6cm;
+    font-family: 'Georgia';
+}
+/*PROJETOS*/
+
+/*CONTATOS*/
+table {
+    background-image: url(img/fundo\ contato.jpg);
+    background-color:#9eeef0;
+    background-size: 100% auto;
+    color: #11427a;
+    width: 60vw;
+    height: 60vh;
+  }
+  
+  tr {
+    height: 50px;
+    font-weight: 900;
+  }
+  
+  td {
+    width: 100px;
+    border:1px solid #11427a;
+  }
+  .informacao_center{
+      text-align: center;
+  }
+  
