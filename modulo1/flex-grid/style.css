@@ -30,7 +30,7 @@ nav{
     background-color:#f2d0e0;
     display: grid;
     width: 17vw;
-        align-items: center;
+    justify-items: center
     grid-template-columns: 0.2fr 1fr 0fr;
     
 }
