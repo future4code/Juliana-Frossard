@@ -1,0 +1,32 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.header{
+    display: flex;
+    justify-content: space-between;
+    background-color:yellow ;
+    
+    
+}
+.div_header{
+    display: flex;
+    padding: 1rem;
+    
+}
+.p_header{
+    color: white;
+    background-color: rgb(43, 212, 37);
+    
+
+}
+.p_menu-header{
+    color: white;
+    background-color: yellow;
+    
+}
+footer{
+    background-color: violet;
+    padding: 1rem;
+    text-align: center;
+}
