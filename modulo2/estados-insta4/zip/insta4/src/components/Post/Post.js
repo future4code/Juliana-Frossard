@@ -2,14 +2,11 @@ import React from 'react'
 import styled from 'styled-components'
 
 import {IconeComContador} from '../IconeComContador/IconeComContador'
-// import {IconeFavorito} from '../IconeFavorito/ArquivoIconeFavorito'
+
 import iconeCoracaoBranco from '../../img/favorite-white.svg'
 import iconeCoracaoPreto from '../../img/favorite.svg'
 import iconeComentario from '../../img/comment_icon.svg'
 import {SecaoComentario} from '../SecaoComentario/SecaoComentario'
-// import {iconeFavoritoBranco} from '../../img/favorite-white.svg'
-// import {iconeFavoritoPreto} from '../../img/favorite-white.svg'
-
 
 const PostContainer = styled.div`
   border: 1px solid gray;
@@ -46,25 +43,21 @@ const PostPhoto = styled.img`
 class Post extends React.Component {
   state = {
     curtido: false,
-    numeroCurtidas: "",
+    numeroCurtidas: 0,
     comentando: false,
-    numeroComentarios: "",
-    favorito:false,
+    numeroComentarios: 0
   }
 
   onClickCurtida = () => {
-    let novaCurtida
-    if(this.state.curtido) {
-      novaCurtida = this.state.numeroCurtidas -1
-    } else {
-      novaCurtida = this.state.numeroCurtidas + 1
-    }
-    this.setState({
-      curtido: !this.state.curtido,
-      numeroCurtidas: novaCurtida
-    })
-    // console.log("curtiu")
+    console.log('Curtiu!')
   }
+
+  onClickComentario = () => {
+    this.setState({
+      comentando: !this.state.comentando
+    })
+  }
+
   aoEnviarComentario = () => {
     this.setState({
       comentando: false,
@@ -86,12 +79,11 @@ class Post extends React.Component {
     if(this.state.comentando) {
       componenteComentario = <SecaoComentario aoEnviar={this.aoEnviarComentario}/>
     }
-    
+
     return <PostContainer>
       <PostHeader>
         <UserPhoto src={this.props.fotoUsuario} alt={'Imagem do usuario'}/>
         <p>{this.props.nomeUsuario}</p>
-       
       </PostHeader>
 
       <PostPhoto src={this.props.fotoPost} alt={'Imagem do post'}/>
