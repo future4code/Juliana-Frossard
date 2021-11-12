@@ -1,43 +1,10 @@
 import React, { Component } from 'react';
-import './App.css';
 import CardGrande from './components/CardGrande/CardGrande';
 import ImagemButton from './components/ImagemButton/ImagemButton';
 import CardPequeno from './components/CardPequeno/CardPequeno';
 import { createGlobalStyle } from 'styled-components';
 import styled from 'styled-components';
 
-const GlobalStyle = createGlobalStyle
-`
-  body {
-    margin: 0;
-    padding: 0;
-  }
-`
-const AppContainer = styled.div
-`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-top: 30px;
-`
-const PageSectionContainer = styled.div
-  `
-  width: 40vw;
-  margin: 10px 0;
-`
-// const PageSectionContainerh3=styled.PageSectionContainerh3
-// `
-//   text-align: center;
-//   margin-bottom: 20px;
-// `
-
-const PageSectionContainerh2 = syled.h2
-`
-  display: flex;
-  justify-content: center;
-  margin-bottom: 20px;
-
-`
 
 
 function App() {
@@ -118,3 +85,36 @@ function App() {
 }
 
 export default App;
+
+const GlobalStyle = createGlobalStyle
+`
+  body {
+    margin: 0;
+    padding: 0;
+  }
+`
+const AppContainer = styled.div
+`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 30px;
+`
+const PageSectionContainer = styled.div
+  `
+  width: 40vw;
+  margin: 10px 0;
+`
+// const PageSectionContainerh3=styled.PageSectionContainerh3
+// `
+//   text-align: center;
+//   margin-bottom: 20px;
+// `
+
+const PageSectionContainerh2 = syled.h2
+`
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+
+`
