@@ -1,8 +1,9 @@
 import React from 'react';
-import ReactDom from 'react-dom';
+import Tracks from './Tracks'
 import { Component } from 'react';
 import styled from 'styled-components';
 import axios from 'axios';
+import DeletePlaylist from './DeletePlayList'
 
 const StyledButton = styled.button`
  border: none;
@@ -80,9 +81,10 @@ export default class Playlists extends Component {
                     <StyledButton>🔲</StyledButton>
                     <li>- {item.name}</li>
                 </PlaylistDiv>
-                <span onClick="">aqui vai a lista de tracks</span>
+                <span onClick="">aqui vai a lista de tracks
+                <Tracks/></span>
                 </div>
-                <button>X</button>
+                <DeletePlaylist  state={this.state.playlist}>X</DeletePlaylist>
                 </CardDeletePlaylist>
             </CardPlaylist>)
 

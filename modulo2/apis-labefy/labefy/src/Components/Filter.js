@@ -1,6 +1,6 @@
 import React from 'react';
 import { Component } from 'react';
-import styled, { ThemeProvider } from 'styled-components';
+import styled from 'styled-components';
 import axios from 'axios';
 
 const StyledButton = styled.button`
