@@ -2,11 +2,9 @@ import React from 'react';
 import { Component } from 'react';
 import styled from 'styled-components';
 import axios from 'axios';
+import Filter from './Filter'
 
-const StyledButton = styled.button`
- border: none;
- background-color: white;
-`
+
 const ContainerHeader = styled.div`
  display: flex;
  align-items: center;
@@ -34,9 +32,7 @@ export default class Header extends Component {
       <ContainerHeader>
         <h1>HEADER</h1>
         <div>
-        <input
-        placeholder="Pesquisar"/>
-        <StyledButton>🔎</StyledButton>
+        <Filter/>
         </div>
       </ContainerHeader>
     );
