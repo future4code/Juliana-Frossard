@@ -5,6 +5,8 @@ import axios from 'axios';
 
 const ContainerPlayTracks = styled.div`
  border: 2px solid gray;
+ background-color: greenyellow;
+ 
 `
 
 export default class PlatTracks extends Component {
@@ -13,7 +15,8 @@ export default class PlatTracks extends Component {
     
     return (
       <ContainerPlayTracks>
-        PlayTracks
+        PlayTracks loren -------------------------------------------------------------------------------------------------------------
+        ----------------
         
       </ContainerPlayTracks>
     );

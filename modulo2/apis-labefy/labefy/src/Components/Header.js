@@ -2,7 +2,7 @@ import React from 'react';
 import { Component } from 'react';
 import styled from 'styled-components';
 import axios from 'axios';
-import Filter from './Filter'
+
 
 
 const ContainerHeader = styled.div`
@@ -11,6 +11,7 @@ const ContainerHeader = styled.div`
  justify-content: space-between;
  padding: 15px;
  border: 1px solid red;
+ background-color: hotpink;
 `
 
 
@@ -32,7 +33,7 @@ export default class Header extends Component {
       <ContainerHeader>
         <h1>HEADER</h1>
         <div>
-        <Filter/>
+        
         </div>
       </ContainerHeader>
     );
