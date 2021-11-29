@@ -20,6 +20,11 @@ const Body = styled.div`
 
 
 export default class App extends Component {
+  state = {
+    playlist: [],
+    inputValue: "" ,
+    inputValueQuery: ""
+}
   render() {
     return (
       <Container>

@@ -17,17 +17,7 @@ const ContainerHeader = styled.div`
 
 export default class Header extends Component {
 
-  getSearchPlaylist = () => {
-    axios.post ("https://us-central1-labenu-apis.cloudfunctions.net/labefy/playlists", {
-        headers:{
-            Authorization: "juliana-frossard-carver"
-        }
-    }).then((response) => {
-        console.log(response.data)
-    }).catch((err) => {
-        console.log(err.response.data)
-    })
-}
+   
   render() {
     return (
       <ContainerHeader>

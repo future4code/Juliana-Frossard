@@ -17,6 +17,7 @@ export default class PlatTracks extends Component {
       <ContainerPlayTracks>
         PlayTracks loren -------------------------------------------------------------------------------------------------------------
         ----------------
+        <audio></audio>
         
       </ContainerPlayTracks>
     );

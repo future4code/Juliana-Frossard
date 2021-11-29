@@ -9,23 +9,19 @@ import axios from 'axios';
 const StyledButton = styled.button`
  border: none;
  background-color: white;
+ border: 1px solid black;
+ 
 `
 const ContainerPlaylist = styled.div`
  border: 1px solid green;
  padding: 10px;
 `
-const PlaylistDiv = styled.div`
- display: flex;
-`
+
 const CardPlaylist = styled.div`
  
  padding: 15px;
 `
-const CardDeletePlaylist = styled.div`
- display: flex;
- justify-content: space-between;
- align-items: center;
-`
+
 
 const Input = styled.input`
 width: 100px;
@@ -33,7 +29,8 @@ width: 100px;
 export default class Playlists extends Component {
     state = {
         playlist: [],
-        inputValue: ""
+        inputValue: "" ,
+        inputValueQuery: ""
     }
 
     componentDidMount() {
@@ -43,6 +40,9 @@ export default class Playlists extends Component {
 
     handleInputchange = (event) => {
         this.setState({ inputValue: event.target.value })
+    }
+    handleInputchangeQuery = (event) => {
+        this.setState({inputValueQuery: event.target.value})
     }
 
 
@@ -73,32 +73,34 @@ export default class Playlists extends Component {
             console.log(err.response.data)
         })
     }
+
+    // playlistQuery = this.state.playlist.filter((item) => {
+    //     return item.name.includes(this.state.inputValueQuery)
+    // })
+
+    // }
     render() {
         const allPlaylists = this.state.playlist.map((item) =>
 
             <CardPlaylist key={item.id}>
-                <CardDeletePlaylist>
-
-                    <PlaylistDiv>
-                        <li>{item.name}</li>
-                    </PlaylistDiv>
-
-
-                </CardDeletePlaylist>
+                <StyledButton>{item.name}</StyledButton>
             </CardPlaylist>)
+        
         return (
             <ContainerPlaylist>
                 <p>Página Inicial</p>
-                <button>OK</button>
+                <button >OK</button>
                 <Input
-                    placeholder="Pesquisar..." />
+                    placeholder="Pesquisar..." 
+                    value={this.state.inputValueQuery}
+                    onChange={this.handleInputchangeQuery}/>
 
                 <p>Minhas Playlists</p>
                 
-                {this.state.playlist.length > 0 ? <ul>
+                {this.state.playlist.length > 0 ? <div>
                     {allPlaylists}
 
-                </ul> : (<p>Aguarde... :)</p>)}
+                </div> : (<p>Aguarde... :)</p>)}
                 <p>Criar Playlist</p>
                 <StyledButton onClick={this.postCreatePlaylists}>➕</StyledButton>
                 <Input
