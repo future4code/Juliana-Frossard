@@ -28,20 +28,31 @@ const Post = (props) => {
 
   };
 
-  const iconeCurtida = { curtido } ? (iconeCoracaoPreto) : (iconeCoracaoBranco)
+  const iconeCurtida = curtido ? (iconeCoracaoPreto) : (iconeCoracaoBranco)
 
   const onClickComentario = () => {
-    setNumeroComentario(numeroComentarios + 1)
+    setNumeroComentario(!comentando)
+    
   }
 
   const enviarComentario = (comentario) => {
-    const listaDeComentarios = [...{ comentarios }, comentario]
+    const listaDeComentarios = [...comentarios, comentario]
     setComentario(listaDeComentarios)
     setComentando(false)
     setNumeroComentario(numeroComentarios + 1)
   }
 
-  
+  const caixaDeComentario = comentando ? (
+       <SecaoComentario enviarComentario={enviarComentario}/>
+  ) : (
+    comentarios.map(comentario => {
+      return (
+        <CommentContainer>
+          <p>{comentario}</p>
+        </CommentContainer>
+      )
+    })
+  )
 
 
 
