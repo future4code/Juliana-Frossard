@@ -20,14 +20,14 @@ export default function App() {
 
   useEffect(() => {
     pokemonList()
-  }, [pokeList])
+  },)
 
   const changePokeName = ((event) => {
     setPokeName(event.target.value)
   })
 
   return (
-    <div>
+    <div className="App">
       <select onChange={changePokeName}>
         <option value={""}>Nenhum</option>
         {pokeList.map(pokemon => {

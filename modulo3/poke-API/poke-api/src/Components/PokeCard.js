@@ -1,32 +1,35 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 
-export default function PokeCard () {
+export default function PokeCard() {
     const [pokemon, setPokemon] = useState({})
+    const [name, setName] = useState("")
+
 
     useEffect(() => {
         pegaPokemon()
-      }, [pokemon])
+    }, [pokemon])
 
     const pegaPokemon = (pokeName) => {
-        axios.get (`https://pokeapi.co/api/v2/pokemon/${pokeName}`)
-        .then ((response) => {
-            setPokemon(response.data)
-        }).catch ((err) => {
-            console.log(err.response.data)
-        })
+        axios.get(`https://pokeapi.co/api/v2/pokemon/${pokeName}`)
+            .then((response) => {
+                setPokemon(response.data.results)
+                setName(response.data.name);
+            }).catch((err) => {
+                console.log(err.response.data.results)
+            })
     }
+
     
 
-
-    return(
+    return (
         <div>
-            <p>{{pokemon}.name}</p>
-        <p>{pokemon.weight} Kg</p>
-        {pokemon.types && <p>{pokemon.types[0].type.name}</p>}
-        {pokemon.sprites && (
-          <img src={pokemon.sprites.front_default} alt={pokemon.name} />
-        )}
+            <p>{name}</p>
+            {/* <p>{pokemons.weight} Kg</p>
+            {pokemons.types && <p>{pokemons.types[0].type.name}</p>}
+            {pokemons.sprites && (
+                <img src={pokemons.sprites.front_default} alt={pokemons.name} />
+            )} */}
 
         </div>
     )
