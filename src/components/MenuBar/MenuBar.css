@@ -1,0 +1,11 @@
+.TitleApp{
+    font-family: Tahoma, Geneva, Verdana, "sans-serif";
+    color:crimson;
+    font-size: 30px;
+    border: 1px solid black;
+    border-top: none;
+    border-right: none ;
+    border-left: none;
+    margin-top: 5px;
+    margin-bottom: 20px;
+}

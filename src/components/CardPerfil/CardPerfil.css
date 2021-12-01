@@ -1,0 +1,9 @@
+.ContainerCard{
+    border: 1px solid crimson;
+    box-shadow: 0 2px 10px 0 rgba(251, 157, 157, 0.77);
+	position: center;
+	border-radius: 5px;
+	height: 430px;
+    width: 350px;
+    margin-left: 25px;
+}

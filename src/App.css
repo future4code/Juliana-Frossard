@@ -1,7 +1,18 @@
-.App {
+.ContainerApp {
   text-align: center;
-}
+  width: 400px;
+  height: 600px;
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+  border: 1px solid black;
+  border-radius: 5px;
+  background-color: white;
+  box-shadow: 0 0 5px #0000000F;
 
+}
+/*
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -35,4 +46,4 @@
   to {
     transform: rotate(360deg);
   }
-}
+} */
