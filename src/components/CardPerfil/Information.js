@@ -19,16 +19,17 @@ export default function Information(props) {
                 console.log(err.response)
             })
     }
-    const profileList = profile.map((item) => {
-        <div>
-            <p>{item.name}</p>
-            <p>{item.age}</p>
+    const profileList = profile.map(item => {
+        return        <div>
+            <h3>{item.name},</h3>
+            <p>{item.age} anos</p>
             <p>{item.bio}</p>
         </div>
     })
     
     return (
         <div>
+            {profileList}
             <div>
                 <button>X</button>
                 <button>s2</button>

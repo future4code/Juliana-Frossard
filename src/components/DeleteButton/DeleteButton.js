@@ -1,6 +1,6 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
-
+import './DeleteButton.css'
 
 
 export default function DeleteButton(props) {
@@ -23,8 +23,8 @@ export default function DeleteButton(props) {
             })
     }
     return (
-        <div>
-            <button onClick={putClear}>Apagar matchs</button>
+        <div className="containerButton">
+            <button className="button" onClick={putClear}>Apagar matchs</button>
         </div>
     )
 }

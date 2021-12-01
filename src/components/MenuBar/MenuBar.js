@@ -4,18 +4,17 @@ import './MenuBar.css';
 import Matchs from '../Matchs/Matchs';
 import CardPerfil from "../CardPerfil/CardPerfil";
 
-
-export default function MenuBar () {
+export default function MenuBar() {
     const [telaAtual, setTelaAtual] = useState("home")
 
     const escolheTela = () => {
-        switch (telaAtual){
+        switch (telaAtual) {
             case "home":
-                return <CardPerfil/>
+                return <CardPerfil />
             case "matchs":
-            return <Matchs />  
+                return <Matchs />
             default:
-                return "Erro! Página não encontrada :("  
+                return "Erro! Página não encontrada :("
         }
     }
 
@@ -27,11 +26,14 @@ export default function MenuBar () {
     }
     return (
         <div>
-            <button onClick={irParaHome}> Home</button>
-            <button onClick={irParaMatchs}>Matchs</button>
+            <div className="containerMenuButton">
+                <button className="MenuButton" onClick={irParaHome}> Home</button>
+                <button className="MenuButton" onClick={irParaMatchs}>Matchs</button>
+            </div>
+
             <p className="TitleApp">AstroMatch 💞</p>
             {escolheTela()}
-            
+
         </div>
     )
 }

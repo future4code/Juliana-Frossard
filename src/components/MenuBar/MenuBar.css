@@ -9,3 +9,14 @@
     margin-top: 5px;
     margin-bottom: 20px;
 }
+.containerMenuButton{
+    display: flex;
+    justify-content: space-between;
+    padding: 5px;
+}
+.MenuButton{
+    cursor: pointer;
+    border: none;
+    background-color: white;
+    font-size: 17px;
+}

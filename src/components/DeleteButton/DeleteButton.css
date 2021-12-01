@@ -1,0 +1,12 @@
+.containerButton{
+    margin-top: 45px;
+    margin-left: 250px;
+}
+
+.button{
+    border: none;
+    color:rgb(47, 23, 28);
+    background-color: white;
+    cursor: pointer;
+    font-family: monospace;
+}
