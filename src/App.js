@@ -2,7 +2,7 @@ import react from "react";
 import { Component } from "react";
 import './App.css'
 import MenuBar from "./components/MenuBar/MenuBar";
-import CardPerfil from "./components/CardPerfil/CardPerfil";
+import DeleteButton from "./components/DeleteButton/DeleteButton";
 
 export default class App extends Component{
   render () {
@@ -11,7 +11,7 @@ export default class App extends Component{
         <div className="ContainerApp">
         <MenuBar/>
         
-        <button>Limpar</button>
+        <DeleteButton/>
       </div>
       
       </div>
