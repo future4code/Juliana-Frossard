@@ -7,7 +7,7 @@ import Information from './Information'
 export default function CardPerfil (props) {
     return (
         <div className="ContainerCard">
-            {/* <Information/> */}
+            <Information/>
         </div>
     )
 }
