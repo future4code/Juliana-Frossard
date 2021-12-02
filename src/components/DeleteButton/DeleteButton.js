@@ -7,8 +7,9 @@ export default function DeleteButton(props) {
     const [deletar, setDeletar] = useState()
 
     useEffect(() => {
-        putClear()
-    });
+        putClear();
+    
+      }, [ ]);
 
     const putClear = () => {
         const body = {
@@ -25,6 +26,7 @@ export default function DeleteButton(props) {
     return (
         <div className="containerButton">
             <button className="button" onClick={putClear}>Apagar matchs</button>
+            
         </div>
     )
 }
