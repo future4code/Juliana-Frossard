@@ -4,6 +4,7 @@ import './MenuBar.css';
 import Matchs from '../Matchs/Matchs';
 import CardPerfil from "../CardPerfil/CardPerfil";
 
+
 export default function MenuBar() {
     const [telaAtual, setTelaAtual] = useState("home")
 

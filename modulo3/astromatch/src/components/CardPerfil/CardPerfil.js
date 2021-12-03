@@ -10,7 +10,7 @@ position: center;
      height: 460px;
      width: 350px;
      margin-left: 25px;
-     background-image: url(data.profile.photo);
+     
  `
 
 
@@ -36,7 +36,7 @@ export default function CardPerfil (props) {
         axios.get("https://us-central1-missao-newton.cloudfunctions.net/astroMatch/julianaFrossard/person")
             .then((response) => {
                 setProfile(response.data.profile)
-                // console.log(response.data)
+                console.log(response.data.profile)
             }).catch((err) => {
                 console.log(err.response)
             })
