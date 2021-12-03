@@ -9,9 +9,9 @@ export default class App extends Component{
     return (
       <div className="ContainerAppFundo">
         <div className="ContainerApp">
-        {/* <MenuBar/>
+        <MenuBar/>
         
-        <DeleteButton/> */}
+        <DeleteButton/>
       </div>
       
       </div>

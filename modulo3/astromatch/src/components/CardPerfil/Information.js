@@ -1,13 +1,13 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
 import './Information.css'
-import styled from 'styled-components';
-import Animation from '../Animation/Animation'
+import Loading from '../Animation/Animation'
 
 
 
 
 export default function Information() {
+    const [carregando, setCarregando] = useState("")
     const [profile, setProfile] = useState({
         profile: {
             id: "",
@@ -17,7 +17,6 @@ export default function Information() {
             bio: ""
         }
     })
-    const [carregando, setCarregando] = useState("")
 
 
     useEffect(() => {
@@ -34,30 +33,28 @@ export default function Information() {
                 setCarregando("carregou")
             }).catch((err) => {
                 console.log(err.response)
-                setCarregando("Ops, houve um erro! Tente novamente. 😅")
+                setCarregando("Ops, ocorreu um erro. Tente novamente")
             })
 
     }
 
     return (
-        <div>
+        <div className="ContainerInformation">
             {
-                carregando === "carregando" ?
-                    <Animation/>
-                    :
-                    <div className="ContainerInform">
-
-                        <img className="imgProfile" src={profile.photo} alt="imagem de perfil" />
-                        <div className="informationProfile"><strong>{profile.name}</strong>, {profile.age}
-                            <p>{profile.bio}</p>
-                        </div>
-                    </div>
+                carregando === "carregando"  ?
+                <Loading/>  :
+                <div>
+                <img className="imgProfile" width="240" src={profile.photo} alt="imagem de perfil" />
+            <div className="informationProfile">{profile.name}, {profile.age}
+                <p>{profile.bio}</p>
+            </div>
+            </div>
 
             }
-
+            
+            
         </div>
+
+
     )
-
 }
-
-

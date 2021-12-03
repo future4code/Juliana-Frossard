@@ -10,7 +10,6 @@ position: center;
      height: 460px;
      width: 350px;
      margin-left: 25px;
-     border: 1px solid crimson;
      background-image: url(data.profile.photo);
  `
 
@@ -30,7 +29,7 @@ export default function CardPerfil (props) {
     useEffect(() => {
         getProfileToChoose();
 
-    }, );
+    },[] );
 
 
     const getProfileToChoose = () => {
@@ -46,7 +45,7 @@ export default function CardPerfil (props) {
 
     return (
         <ContainerCard>
-            {/* <Information getProfileToChoose={getProfileToChoose()}  profile={profile}/> */}
+            <Information getProfileToChoose={getProfileToChoose()}  profile={profile}/>
             {/* <SelectMatchs profile={profile}/> */}
         </ContainerCard>
     )
