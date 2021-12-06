@@ -22,6 +22,7 @@ export default function PokeCard() {
 
     
 
+
     return (
         <div>
             <p>{name}</p>
