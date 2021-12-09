@@ -1,12 +1,18 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
 import styled from 'styled-components';
+import { useNavigate} from "react-router";
 
 const ContainerCreateTrip = styled.div`
 display: grid;
 `
 
 export default function CreateTrip() {
+    const navigate = useNavigate()
+
+    const goToListTrip=()=>{
+        navigate("/trips/list")
+       };
 
     return (
         <div>
@@ -22,6 +28,8 @@ export default function CreateTrip() {
                 <input placeholder="Descrição"/>
                 <input type="Number"placeholder="Duração em dias"/>
             </ContainerCreateTrip>
+            <button onClick={goToListTrip}>Voltar</button>
+            <button>Criar</button>
         </div>
     )
 }

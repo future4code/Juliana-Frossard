@@ -9,7 +9,6 @@ export function useRequestData(url) {
         axios.get(url)
     .then((response) => {
         setData(response.data)
-        console.log("deu certo!")
         })
     .catch((err) => {
         console.log(err.response.data)
