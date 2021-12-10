@@ -11,7 +11,7 @@ export function useRequestData(url) {
         setData(response.data)
         })
     .catch((err) => {
-        console.log(err.response.data)
+        window.alert(err.response.data)
     })
     }, [url])
     return data

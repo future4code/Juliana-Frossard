@@ -3,8 +3,11 @@ import { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import { useNavigate} from "react-router";
 
-const ContainerCreateTrip = styled.div`
+const Container = styled.div`
 display: grid;
+ justify-content: center;
+ align-items: center;
+ align-content: center;
 `
 
 export default function CreateTrip() {
@@ -15,9 +18,9 @@ export default function CreateTrip() {
        };
 
     return (
-        <div>
+        <Container>
             <h1>Criar Viagem</h1>
-            <ContainerCreateTrip>
+            <div>
                 <input placeholder="Nome"/>
                 <select>
                     <option>Escolha um Planeta</option>
@@ -27,9 +30,9 @@ export default function CreateTrip() {
                 </select>
                 <input placeholder="Descrição"/>
                 <input type="Number"placeholder="Duração em dias"/>
-            </ContainerCreateTrip>
+            </div>
             <button onClick={goToListTrip}>Voltar</button>
             <button>Criar</button>
-        </div>
+        </Container>
     )
 }
