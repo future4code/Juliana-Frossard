@@ -12,7 +12,7 @@ align-items: center;
 background-color: #0a1e59;
 `
 const ImgLogo = styled.img`
-width: 200px;
+width: 150px;
 margin-top: 10px;
 `
 const ButtonHeader = styled.button`
@@ -59,6 +59,7 @@ export default function Header() {
             <ImgLogo src={Logo} />
             <div>
                 {choosePage}
+                <ButtonHeader>Home</ButtonHeader>
                 <ButtonHeader>Login</ButtonHeader>
             </div>
 

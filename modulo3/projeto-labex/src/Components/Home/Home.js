@@ -7,7 +7,7 @@ display: grid;
  justify-content: center;
  align-items: center;
  align-content: center;
-`
+ `
 const P = styled.p`
 font-size: 40px;
 font-family:  "Arial";

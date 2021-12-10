@@ -14,13 +14,14 @@ const P = styled.p`
 font-size: 40px;
 font-family:  "Arial";
 color: white;
+margin-left: 20px;
 `
 const Button = styled.button`
 border-radius: 4px;
 background-color: #73d3dd;
 border: none;
 margin: 10px;
-width: 100px;
+width: 150px;
 height: 30px;
 color: #0a1e59;
 font-family:  "Arial";
@@ -34,8 +35,18 @@ cursor: pointer;
 export default function ListTrips() {
     const navigate = useNavigate()
 
-    const trips = useRequestData(`${URL_BASE}/trips`)
-    console.log(trips)
+    const [trip] = useRequestData(`${URL_BASE}/trips`)
+    console.log(trip)
+
+    const tripList = trip.map((tri) => {
+        return <div key={tri.id}>
+            <p><b>Nome:</b> {tri.name}</p>
+            <p><b>Descrição:</b> {tri.description}</p>
+            <p><b>Planeta:</b> {tri.planet}</p>
+            <p><b>Duração:</b> {tri.durationInDays}</p>
+            <p><b>Data:</b> {tri.date}</p>
+        </div>
+    })
 
     const goToCreateTrip = () => {
         navigate("/trips/application")
@@ -47,6 +58,7 @@ export default function ListTrips() {
     return (
         <Container>
             <P>Lista de Viagens</P>
+            {tripList && tripList.length > 0 ? tripList : <p>Carregando...</p>}
             <div>
                 <Button onClick={goToHome}>Voltar</Button>
                 <Button onClick={goToCreateTrip}>Inscrever-se</Button>

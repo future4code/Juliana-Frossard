@@ -4,13 +4,8 @@ import { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import { countries } from '../../../Constants/Coutries';
 import { URL_BASE } from '../../../Constants/URL';
+import { Container, Form, P, Button, ButtonFlex } from './Css';
 
-const Container = styled.div`
-display: grid;
-justify-content: center;
- align-items: center;
- align-content: center;
- `
 
 export default function AplicationForm() {
     const [name, setName] = useState("")
@@ -36,30 +31,35 @@ export default function AplicationForm() {
     }
 
 
-    const applyToTrip = () => {
-        const body = {
-            name: name,
-            age: age,
-            applicationText: applicationText,
-            profession: profession,
-            country: country,
-        }
-        axios.post(`${URL_BASE}/trips/${id}/apply`, body, {
-            headers: {
-                ContentType= "application/json"
-            }
-        }).then((response) => {
-            console.log("APLICADO", response.data)
-        }).catch((err) => {
-            console.log("Erro! Inscrição não concluida, tente novamente.")
-        })
-    }
+    // const applyToTrip = () => {
+    //     const body = {
+    //         name: name,
+    //         age: age,
+    //         applicationText: applicationText,
+    //         profession: profession,
+    //         country: country,
+    //     }
+    //     axios.post(`${URL_BASE}/trips/id/apply`, body, {
+    //         headers: {
+    //             ContentType= "application/json"
+    //         }
+    //     }).then((response) => {
+    //         console.log("APLICADO", response.data)
+    //         setName("")
+    //         setAge(0)
+    //         setAplicationText("")
+    //         setProfession("")
+
+    //     }).catch((err) => {
+    //         console.log("Erro! Inscrição não concluida, tente novamente.")
+    //     })
+    // }
 
 
     return (
         <Container>
-            <h1>Inscreva-se para uma viagem</h1>
-            <form onSubmit={applyToTrip}>
+            <P>Inscreva-se para uma viagem</P>
+            <Form >
                 <select>
                     <option>Escolha uma viagem</option>
                 </select>
@@ -97,9 +97,11 @@ export default function AplicationForm() {
                         return <option value={country} key={country}>{country}</option>
                     })}
                 </select>
-                <button>Enviar</button>
-            </form>
-            <button>Voltar</button>
+                <Button>Enviar</Button>
+
+            </Form>
+
+
 
         </Container>
     )

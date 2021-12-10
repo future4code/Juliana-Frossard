@@ -9,7 +9,7 @@ bottom:0;
 width:100%;
 `
 const ImgLogo2 = styled.img`
-width: 470px;
+width: 400px;
 margin-top: 6v  v   0px;
 margin-left: 450px;
 `
