@@ -35,18 +35,19 @@ cursor: pointer;
 export default function ListTrips() {
     const navigate = useNavigate()
 
-    const [trip] = useRequestData(`${URL_BASE}/trips`)
-    console.log(trip)
+    // const [trip] = useRequestData(`${URL_BASE}/trips`)
+    // console.log(trip)
 
-    const tripList = trip.map((tri) => {
-        return <div key={tri.id}>
-            <p><b>Nome:</b> {tri.name}</p>
-            <p><b>Descrição:</b> {tri.description}</p>
-            <p><b>Planeta:</b> {tri.planet}</p>
-            <p><b>Duração:</b> {tri.durationInDays}</p>
-            <p><b>Data:</b> {tri.date}</p>
-        </div>
-    })
+    // const tripList = trip.map((tri) => {
+    //     return <div key={tri.id}>
+    //         <p><b>Nome:</b> {tri.name}</p>
+    //         <p><b>Planeta:</b> {tri.planet}</p>
+    //         <p><b>Descrição:</b> {tri.description}</p>
+    //         <p><b>Data:</b> {tri.date}</p>
+    //         <p><b>Duração:</b> {tri.durationInDays}</p>
+            
+    //     </div>
+    // })
 
     const goToCreateTrip = () => {
         navigate("/trips/application")
@@ -58,7 +59,7 @@ export default function ListTrips() {
     return (
         <Container>
             <P>Lista de Viagens</P>
-            {tripList && tripList.length > 0 ? tripList : <p>Carregando...</p>}
+            {/* {tripList} */}
             <div>
                 <Button onClick={goToHome}>Voltar</Button>
                 <Button onClick={goToCreateTrip}>Inscrever-se</Button>

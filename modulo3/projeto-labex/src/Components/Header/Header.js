@@ -59,7 +59,6 @@ export default function Header() {
             <ImgLogo src={Logo} />
             <div>
                 {choosePage}
-                <ButtonHeader>Home</ButtonHeader>
                 <ButtonHeader>Login</ButtonHeader>
             </div>
 
