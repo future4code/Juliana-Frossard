@@ -8,7 +8,7 @@ width: 100vw;
 margin-top: 3vh;
 `
 export const LogoImg = styled.img`
-width: 20vw;
+width: 40vw;
 max-width: 350px;
 `
 

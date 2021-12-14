@@ -5,4 +5,5 @@ export const StyledToolBar = styled(Toolbar)`
 display: flex;
 flex-direction: row;
 justify-content: space-between;
+background-color: #F27649;
 `

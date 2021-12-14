@@ -3,58 +3,65 @@ import { InputsContainer, ScreenContainer } from './styled'
 import { TextField } from "@material-ui/core";
 import { Button } from "@material-ui/core";
 import useForm from "../../hooks/useForm";
-import {login} from '../../services/user'
-import {useNavigate} from 'react-router-dom'
+import { useNavigate } from "react-router-dom";
+import { singUp } from "../../services/user";
 
-
-const LoginForm = ({rightButtonText,setRightButtonText}) => {
-    const [form, onChange, clear] = useForm({ email: "", password: "" })
+const SingUpForm = ({setRightButtonText}) => {
     const navigate = useNavigate()
+
+    const [form, onChange, clear] = useForm({name:"", email: "", password: "" })
+    console.log(form)
 
     const onSubmitForm = (event) => {
         event.preventDefault()
-        console.log("form", form)
-        login(form, clear, navigate, setRightButtonText)
+        singUp(form, clear, navigate,setRightButtonText)
     }
-
-    
     return (
         <ScreenContainer>
             <InputsContainer>
                 <form onSubmit={onSubmitForm}>
+                <TextField
+                        name={"name"}
+                        value={form.name}
+                        onChange={onChange}
+                        label={"Nome"}
+                        variant={"outlined"}
+                        margin="none"
+                        type={"text"}
+                        required
+                        fullWidth />
                     <TextField
                         name={"email"}
                         value={form.email}
                         onChange={onChange}
                         label={"Email"}
                         variant={"outlined"}
-                        margin="normal"
+                        margin="none"
                         type={"email"}
                         required
-                        fullWidth
-                    />
+                        fullWidth />
                     <TextField
                         name={"password"}
                         value={form.password}
                         onChange={onChange}
                         label={"Senha"}
                         variant={"outlined"}
-                        margin="normal"
+                        margin="none"
                         type={"password"}
-                        fullWidth
                         required
+                        fullWidth
                     />
                     <Button
                         type={"submit"}
                         fullWidth
                         variant={"contained"}
                         color={"primary"}
-                        margin="normal"
-                    >Entrar</Button>
+                        margin="none"
+                    >Cadastrar</Button>
                 </form>
             </InputsContainer>
         </ScreenContainer>
     )
 }
 
-export default LoginForm;
+export default SingUpForm;

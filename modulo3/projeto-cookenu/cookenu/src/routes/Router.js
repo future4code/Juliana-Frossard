@@ -8,17 +8,17 @@ import SingUpPage from '../pages/SingUpPage/SingUpPage'
 import ErrorPage from '../pages/ErrorPage/ErrorPage'
 import Header from "../components/Header/Header"
 
-const Router = () => {
+const Router = ({rightButtonText,setRightButtonText}) => {
     return (
         <BrowserRouter>
-        <Header/>
+        <Header rightButtonText={rightButtonText} setRightButtonText={setRightButtonText}/>
         <Routes>
-        <Route path="/login" element={<LoginPage/>} />
-        <Route path="/cadastro" element={<SingUpPage/>} />
+        <Route path="/login" element={<LoginPage setRightButtonText={setRightButtonText}/>} />
+        <Route path="/cadastro" element={<SingUpPage setRightButtonText={setRightButtonText}/>} />
         <Route path="/" element={<RecipeListPage/>} />
         <Route path="adicionar-receita" element={<AddRecipesPage/>} />
         <Route path="detalhe/:id" element={<RecipeDetailPage/>}/>
-        <Route element={<ErrorPage/>} />
+        <Route path="*" element={<ErrorPage/>} />
 
         </Routes>
         
