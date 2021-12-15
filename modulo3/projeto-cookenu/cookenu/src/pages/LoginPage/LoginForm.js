@@ -7,7 +7,7 @@ import {login} from '../../services/user'
 import {useNavigate} from 'react-router-dom'
 
 
-const LoginForm = ({rightButtonText,setRightButtonText}) => {
+const LoginForm = ({setRightButtonText}) => {
     const [form, onChange, clear] = useForm({ email: "", password: "" })
     const navigate = useNavigate()
 
