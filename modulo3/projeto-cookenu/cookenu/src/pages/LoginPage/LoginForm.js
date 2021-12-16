@@ -1,20 +1,22 @@
-import React from "react";
+import React,{useState}  from "react";
 import { InputsContainer, ScreenContainer } from './styled'
-import { TextField } from "@material-ui/core";
+import { CircularProgress, TextField } from "@material-ui/core";
 import { Button } from "@material-ui/core";
 import useForm from "../../hooks/useForm";
 import {login} from '../../services/user'
 import {useNavigate} from 'react-router-dom'
 
 
+
 const LoginForm = ({setRightButtonText}) => {
     const [form, onChange, clear] = useForm({ email: "", password: "" })
     const navigate = useNavigate()
+    const [isLoading, setIsLoading] = useState(false)
 
     const onSubmitForm = (event) => {
         event.preventDefault()
         console.log("form", form)
-        login(form, clear, navigate, setRightButtonText)
+        login(form, clear, navigate, setRightButtonText,setIsLoading)
     }
 
     
@@ -50,7 +52,7 @@ const LoginForm = ({setRightButtonText}) => {
                         variant={"contained"}
                         color={"primary"}
                         margin="normal"
-                    >Entrar</Button>
+                    >{isLoading ? <CircularProgress color={"inherit"} size={24}/> : <>Entrar</>}</Button>
                 </form>
             </InputsContainer>
         </ScreenContainer>

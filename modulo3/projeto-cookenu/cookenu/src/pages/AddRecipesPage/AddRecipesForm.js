@@ -1,5 +1,5 @@
-import React from 'react';
-import { TextField } from '@material-ui/core';
+import React, {useState} from "react";
+import { CircularProgress, TextField } from "@material-ui/core";
 import { Button } from '@material-ui/core';
 import useForm from '../../hooks/useForm'
 import { createRecipe } from '../../services/recipe'
@@ -8,10 +8,11 @@ import { createRecipe } from '../../services/recipe'
 const AddRecipesForm = () => {
     
     const [form, onChange, clear] = useForm({ title: "", description: "", image: "" })
+    const [isLoading, setIsLoading] = useState(false)
 
     const onSubmitForm = (event) => {
         event.preventDefault()
-        createRecipe(form, clear)
+        createRecipe(form, clear, setIsLoading)
     }
     return (
         <form onSubmit={onSubmitForm}>
@@ -58,7 +59,7 @@ const AddRecipesForm = () => {
                     variant={"contained"}
                     color={"primary"}
                     margin="normal"
-                >Adicionar Receita</Button>
+                >{isLoading ? <CircularProgress color={"inherit"} size={24}/> : <>Adicionar Receita</>}</Button>
             </div>
         </form>
     )

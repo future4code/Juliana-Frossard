@@ -2,27 +2,28 @@ import React from 'react';
 import { CardActionArea } from '@material-ui/core';
 import { CardMedia } from '@material-ui/core';
 import { Typography } from '@material-ui/core';
-import {ContainerRecipeCard} from './styled'
+import { RecipeCardContainer, RecipeCardContent } from './styled'
 
 
 const RecipeCard = (props) => {
 
-    return(
-        <ContainerRecipeCard onClick={props.onClick}>
+    return (
+        <RecipeCardContainer onClick={props.onClick}>
             <CardActionArea>
                 <CardMedia
-                component ={"img"}
-                alt={props.title}
-                image={props.image}
-                title={props.title}
+                    component={"img"}
+                    alt={props.title}
+                    height={'200px'}
+                    image={props.image}
+                    title={props.title}
                 />
-                <ContainerRecipeCard>
-                    <Typography align={"center"}>
-                        {props.title.toUpperCase()}
+                <RecipeCardContent>
+                    <Typography align={'center'}>
+                        {props.title}
                     </Typography>
-                </ContainerRecipeCard>
+                </RecipeCardContent>
             </CardActionArea>
-        </ContainerRecipeCard>
+        </RecipeCardContainer>
     )
 }
 

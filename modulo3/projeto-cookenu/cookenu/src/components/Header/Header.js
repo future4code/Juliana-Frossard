@@ -27,8 +27,8 @@ const Header = ({rightButtonText,setRightButtonText}) => {
 
         <AppBar position="static" theme={theme}>
             <StyledToolBar>
-                <Button color="inherit" onClick={() =>goToRecipesList(navigate)}>Cookenu</Button>
-                <Button color="inherit" onClick={rightButtonAction}>{rightButtonText}</Button>
+                <Button color="inherit" size="large" onClick={() =>goToRecipesList(navigate)}><b>Cookenu</b></Button>
+                <Button color="inherit" size="large" onClick={rightButtonAction}><b>{rightButtonText}</b></Button>
             </StyledToolBar>
         </AppBar>
 

@@ -1,6 +1,7 @@
-import { Typography } from "@material-ui/core";
+import {CircularProgress, Typography } from "@material-ui/core";
 import React from "react";
 import { useParams } from "react-router-dom";
+import Loading from "../../components/Loading/Loading";
 import { BASE_URL } from "../../constants/urls";
 import useProtectedPage from "../../hooks/useProtectedPage";
 import useRequestData from "../../hooks/useRequestData";
@@ -14,11 +15,15 @@ const RecipeDetailPage = () => {
 
     return (
         <ScreenContainer>
+            {recipe ? 
             <RecipeContainer>
-                <RecipeImage src={recipe && recipe.image} />
-                <Typography gutterBottom align={"center"} variant={"h5"} color={"primary"}>{ recipe && recipe.title}</Typography>
-                <Typography align={"center"}>{recipe && recipe.description}</Typography>
+                <RecipeImage src={recipe.image} />
+                <Typography gutterBottom align={"center"} variant={"h5"} color={"primary"}>{recipe.title}</Typography>
+                <Typography align={"center"}>{recipe.description}</Typography>
             </RecipeContainer>
+            :
+            <Loading/>
+}
 
         </ScreenContainer>
     )

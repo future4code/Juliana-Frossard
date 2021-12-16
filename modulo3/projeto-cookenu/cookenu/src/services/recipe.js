@@ -1,7 +1,9 @@
 import axios from 'axios';
 import { BASE_URL } from '../constants/urls';
 
-export const createRecipe = (form, clear) => {
+
+export const createRecipe = (form, clear, setIsLoading) => {
+    setIsLoading(true)
     axios.post(`${BASE_URL}/recipe`, form, {
         headers: {
             Authorization: localStorage.getItem("token")
@@ -10,9 +12,12 @@ export const createRecipe = (form, clear) => {
         .then((response) => {
             alert(response.data.message)
             clear()
+            setIsLoading(false)
+            
         })
         .catch((err) => {
-            alert(err.response.data.message)
+            setIsLoading(false)
+            alert(err.response)
         })
 
 }

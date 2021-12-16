@@ -9,8 +9,8 @@ margin: 30px;
 `
 
 export const AddRecipeButton = styled(Fab)`
-position: fixed !important;
-margin-left: 93% !important;
-margin-top: 33% !important;
-button: 20px;
-`
+  position: fixed !important;
+  right: 20px;
+  bottom: 20px;
+  z-index: 3;
+  `

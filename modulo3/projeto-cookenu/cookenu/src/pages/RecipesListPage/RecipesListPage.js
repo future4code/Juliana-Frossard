@@ -6,6 +6,7 @@ import RecipeCard from '../../components/RecipeCard/RecipeCard'
 import {RecipeListContainer, AddRecipeButton} from './styled'
 import { useNavigate } from "react-router-dom";
 import {goToAddRecipes, goToRecipesDetail} from '../../routes/coordinator'
+import Loading from '../../components/Loading/Loading'
 
 
 const RecipeListPage = () => {
@@ -32,7 +33,7 @@ const RecipeListPage = () => {
     
     return (
         <RecipeListContainer>
-            {recipesCard}
+            {recipesCard.length > 0 ? recipesCard : <Loading/>}
             <AddRecipeButton
             color={"primary"}
             onClick={()=> goToAddRecipes(navigate)}>+</AddRecipeButton>
