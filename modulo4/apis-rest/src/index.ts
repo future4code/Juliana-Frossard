@@ -1,8 +1,8 @@
 import express, { Request, Response } from 'express';
 import cors from 'cors';
 import { AddressInfo } from 'net';
-import { users, Type, User } from './data';
-import { off, send } from 'process';
+import { users, User } from './data';
+
 
 const app = express()
 
@@ -128,6 +128,7 @@ app.post('/users', (req: Request, res: Response) => {
         const email = req.body.email
         const type = req.body.type
         const age = req.body.age
+        
         if (!name || !email || !type || !age) {
             throw new Error("Faltam informações do body");
         }
