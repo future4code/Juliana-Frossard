@@ -13,16 +13,24 @@ app.get('/ping', (req:Request, res:Response) => {
     res.send("pong")
 })
 
+//não funciona
 app.get('/toDo', (req:Request, res:Response) => {
     const toDoList = toDo
+    const trueList = []
 
-    const list = toDoList.map((item) => {
+    const list = toDoList.filter((item) => {
         if(item.completed === true){
-            return ({
+            return (trueList.push({
                 name: item.title,
                 completed: item.completed
-            })
+            }))
         }
-   res.send(list)
+   
+
+   res.status(200).send(list)
     })
+})
+
+app.post('/create/', (req:Request, res:Response) => {
+    const title = req.body.title
 })
