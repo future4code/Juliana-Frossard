@@ -3,7 +3,7 @@ CREATE TABLE Film (
     name VARCHAR (255) NOT NULL UNIQUE,
     synpose TEXT NOT NULL,
     release_date DATE NOT NULL,
-    rating INT (10)
+    assessment INT (10)
 );
 
 INSERT INTO Film (id, name, synpose, release_date, assessment)
@@ -79,29 +79,9 @@ VALUES(
 #AND name LIKE "%dia%" OR synpose LIKE "%cego%"
 #AND assessment >= 7;
 
-SELECT * FROM  Film;
+#SELECT * FROM Film
 #WHERE release_date < CURDATE() AND 
 #     (name LIKE "%TERMO DE BUSCA%" OR
 #     synpose LIKE "%TERMO DE BUSCA%");
 # //copiado do notion para teste do CURDATE
 
-ALTER TABLE Film CHANGE assessment rating INT (10);
-ALTER TABLE Film DROP COLUMN assessment;
-DELETE FROM Film WHERE id="002";
-
-SELECT * FROM Film 
-INNER JOIN Rating ON Film.id = Rating.film_id;
-
-SELECT film_id, name, rating, rate from Film 
-INNER JOIN Rating ON Film.id = Rating.film_id;
-
-#copiado das dicas
-SELECT m.id as film_id, r.rate as rating FROM Film m
-INNER JOIN Rating r ON m.id = r.film_id;
-
-SELECT film_id, name, rate , comment 
-FROM Film LEFT JOIN Rating ON Film.id = Rating.film_id;
-
-SELECT * FROM Film m
-LEFT JOIN MovieCast mc ON m.id = mc.film_id
-JOIN Actor a ON a.id = mc.actor_id;

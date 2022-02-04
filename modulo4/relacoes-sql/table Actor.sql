@@ -106,73 +106,7 @@ VALUES(
   "female"
 );
 
-INSERT INTO Actor (id, name, salary, birth_date, gender)
-VALUES(
-  "007", 
-  "Marco Ricca",
-  2000,
-  "1962-11-28", 
-  "male"
-);
-INSERT INTO Actor (id, name, salary, birth_date, gender)
-VALUES(
-  "008", 
-  "Mirna Spritzer",
-  30000,
-  "1957-03-03", 
-  "female"
-);
-INSERT INTO Actor (id, name, salary, birth_date, gender)
-VALUES(
-  "009", 
-  "Guilherme Lobo",
-  30000,
-  "1995-02-08", 
-  "male"
-);
-INSERT INTO Actor (id, name, salary, birth_date, gender)
-VALUES(
-  "010", 
-  "Selma Egrei",
-  3000,
-  "1949-01-01", 
-  "female"
-);
-INSERT INTO Actor (id, name, salary, birth_date, gender)
-VALUES(
-  "011", 
-  "Cristina Pereira",
-  3000,
-  "1949-08-09", 
-  "female"
-);
-INSERT INTO Actor (id, name, salary, birth_date, gender)
-VALUES(
-  "012", 
-  "Carol Duarte",
-  3000,
-  "1991-07-10", 
-  "female"
-);
-INSERT INTO Actor (id, name, salary, birth_date, gender)
-VALUES(
-  "013", 
-  "Buzz Lightyear",
-  10000000000,
-  "1995-05-12", 
-  "male"
-);
-INSERT INTO Actor (id, name, salary, birth_date, gender)
-VALUES(
-
-  "014", 
-  "Imperador Zurg",
-  100000,
-  "1995-05-12", 
-  "male"
-);
-
-SELECT * FROM Actor;
+#SELECT * FROM Actor;
 #SELECT id, salary from Actor ;
 #SELECT id, name from Actor WHERE gender = "male";
 #SELECT id, name from Actor WHERE gender = "female";
@@ -189,8 +123,8 @@ SELECT * FROM Actor;
 #SELECT id, name from Actor WHERE id = "002";
 #SELECT name, salary from Actor WHERE salary>300000 AND name LIKE "A%" OR name LIKE "J%";
 
-SELECT * FROM Actor
-WHERE (name LIKE "A%" OR name LIKE "J%") AND salary > 300000;
+#SELECT * FROM Actor
+#WHERE (name LIKE "A%" OR name LIKE "J%") AND salary > 300000;
 
 #SELECT * FROM Actor
 #WHERE name NOT LIKE "A%" AND salary >350000;
@@ -207,4 +141,4 @@ WHERE (name LIKE "A%" OR name LIKE "J%") AND salary > 300000;
 #(name LIKE "%g%" OR name LIKE "%G%" OR name LIKE "%a%" OR name LIKE "%A%")
 #AND salary BETWEEN 350000 AND 900000; //copiado no notion
 
-DELETE FROM Actor WHERE id="009";
+

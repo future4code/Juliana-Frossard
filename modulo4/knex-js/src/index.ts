@@ -8,7 +8,7 @@ const app = express();
 app.use(express.json());
 app.use(cors());
 
-const server = app.listen(process.env.PORT || 3003, () => {
+const server = app.listen(process.env.PORT || 3004, () => {
     if (server) {
         const address = server.address() as AddressInfo;
         console.log(`Server is running in http://localhost: ${address.port}`);
@@ -30,7 +30,6 @@ const getActorById = async (id: string): Promise<any> => {
 }
 
 
-// Assim a chamada funciona fora dos endpoints com .then()/.catch
 getActorById("001")
     .then(result => {
         console.log(result)
