@@ -7,6 +7,8 @@ CREATE TABLE CreateTask (
     creatorUserId varchar(255) NOT NULL,
     FOREIGN KEY (creatorUserId) REFERENCES ToDoList(id)
 );
+
+SELECT * FROM CreateTask;
 INSERT INTO CreateTask (id, title, status, description, limitDate, creatorUserID)
 VALUE (
 "a",

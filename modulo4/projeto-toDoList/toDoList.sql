@@ -42,6 +42,7 @@ VALUES(
 );
 
 SELECT * FROM ToDoList;
+SELECT id, nickname FROM ToDoList;
 
 EXPLAIN ToDoList;
 
