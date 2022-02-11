@@ -1,8 +1,10 @@
 import { Request, Response } from 'express';
-import connection from '../connection';
+import connection from '../../connection';
+
 
 export const createUser = async (
     req: Request, res: Response): Promise<void> => {
+
     try {
         const { name, email, password } = req.body
 
@@ -13,9 +15,9 @@ export const createUser = async (
                 email,
                 password
             })
-        res.status(201).end()
+        res.status(201).send('Created User')
     } catch (error) {
-        res.status(500).end
+        res.status(500).send('ERROR')
     }
 }
 
