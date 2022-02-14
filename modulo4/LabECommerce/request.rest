@@ -1,5 +1,7 @@
 POST http://localhost:3003/users
+
 Content-Type: application/json
+
 {
     "name": "Juliana",
     "email":"ju.frossard@email.com",
@@ -7,9 +9,21 @@ Content-Type: application/json
 }
 
 ### 
-
 GET http://localhost:3003/users
 
 ### 
-
 GET http://localhost:3003/products
+
+###
+POST http://localhost:3003/products
+
+Content-Type: application/json
+
+{
+    "name":"Caneca inteligente",
+    "price": "15000",
+    "image_url": "https://m.media-amazon.com/images/I/618GTZGoIAL._AC_SY450_.jpg"
+}
+
+###
+GET http://localhost:3003/users/123456/purchases
