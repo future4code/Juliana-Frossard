@@ -25,6 +25,3 @@ commerceTest.getCep()
 const industryTest = new Industry(5, "13569-003")
 industryTest.getCep()
 
-//ESTOU COM ESTE ERRO 
-// Cannot use import statement outside a module
-//nao consegui resolver entao fiz o que eu consegui porem nao testei nada
