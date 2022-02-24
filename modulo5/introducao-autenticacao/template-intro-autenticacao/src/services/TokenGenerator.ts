@@ -1,9 +1,9 @@
 import * as jwt from "jsonwebtoken";
-import { InputAuthentication } from '../types';
+import { AuthenticationData } from "../types";
 
-const expiresIn = "1min"
+  const expiresIn = "5min";
 
-export const TokenGenerator = (input: InputAuthentication): string => {
+  export const generateToken = (input: AuthenticationData): string => {
     const token = jwt.sign(
       {
         id: input.id,
@@ -15,6 +15,5 @@ export const TokenGenerator = (input: InputAuthentication): string => {
     );
     return token;
   }
-
 
 

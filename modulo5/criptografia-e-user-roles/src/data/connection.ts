@@ -1,5 +1,5 @@
-import knex from 'knex'
-import dotenv from 'dotenv'
+import knex from 'knex';
+import dotenv from 'dotenv';
 
 dotenv.config()
 
@@ -15,4 +15,4 @@ const connection = knex({
     }
 })
 
-export default connection
+export default connection;
