@@ -1,12 +1,12 @@
-import { UserDataBase } from './../../data/user/UserDataBase';
 import { Request, Response } from "express";
-import { Authenticator } from '../../services/Authenticator';
+import { PostDataBase } from "../../data/post/PostDataBase";
+import { Authenticator } from "../../services/Authenticator";
 
-
-export const getAllUsers = async (req: Request, res: Response): Promise<void> => {
+export const getPost = async (req: Request, res: Response): Promise<void> => {
     let errorCode = 400
     try {
         const token = req.headers.authorization
+        const id = req.body
         if (!token) {
             errorCode = 422
             throw new Error("Esse endpoint necessita de autorização");
@@ -19,12 +19,12 @@ export const getAllUsers = async (req: Request, res: Response): Promise<void> =>
             throw new Error("Somente usuario ADM pode acessar essa funcionalidade");
         };
 
-        const userDataBase = new UserDataBase();
-        const users = await userDataBase.getAllUser()
+        const postDataBase = new PostDataBase()
+        const posts = postDataBase.findPostById(id)
 
-        res.status(200).send(users)
+        res.status(200).send(posts)
+
     } catch (error: any) {
         res.status(400).send(error.message)
     }
-
 }

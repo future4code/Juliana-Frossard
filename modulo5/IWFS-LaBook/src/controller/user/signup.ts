@@ -15,7 +15,11 @@ export const signup = async (req: Request, res: Response) => {
       if (!name || !email || !password || !role) {
          errorCode = 422
          throw new Error("Insira as informações corretamente (name, email, password, role )");
-      }
+      };
+      if (!email.includes('@') && !email.includes('.com')) {
+         errorCode = 422;
+         throw new Error("Formato de email inválido");
+     };
       const userDataBase = new UserDataBase()
       const user = await userDataBase.findUserByEmail(email)
 
