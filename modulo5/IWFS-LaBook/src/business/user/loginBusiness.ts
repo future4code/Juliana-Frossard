@@ -12,7 +12,8 @@ export const loginBusiness = async (
       if (!email || !password) {
          errorCode = 422
          throw new Error("Insira as informações corretamente (email, password)");
-      }
+      };
+      
       const userDataBase = new UserDataBase()
       const user = await userDataBase.findUserByEmail(email)
 

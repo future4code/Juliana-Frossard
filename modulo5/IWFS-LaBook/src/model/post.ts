@@ -14,7 +14,7 @@ export class Post {
         private userId: string,
         private photo: string,
         private description: string,
-        private creationDate: string,
+        private createdAt: any,
         private role?: POST_ROLES
     ) { }
     public getId() {
@@ -29,8 +29,8 @@ export class Post {
     public getDescription() {
         return this.description
     }
-    public getCreationDate() {
-        return this.creationDate
+    public getCreatedAt() {
+        return this.createdAt
     }
     public getRole() {
         return this.role
@@ -43,7 +43,7 @@ export class Post {
             data.userId,
             data.photo,
             data.description,
-            data.creationDate,
+            data.createdAt,
             data.role)
     }
 }

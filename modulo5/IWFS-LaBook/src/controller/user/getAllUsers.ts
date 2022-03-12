@@ -1,26 +1,13 @@
-import { UserDataBase } from './../../data/user/UserDataBase';
 import { Request, Response } from "express";
-import { Authenticator } from '../../services/Authenticator';
+import { getAllUsersBusiness } from '../../business/user/getAllUserBusiness';
 
 
 export const getAllUsers = async (req: Request, res: Response): Promise<void> => {
-    let errorCode = 400
+  
     try {
-        const token = req.headers.authorization
-        if (!token) {
-            errorCode = 422
-            throw new Error("Esse endpoint necessita de autorização");
-        };
-
-        const authenticator = new Authenticator()
-        const tokenData = authenticator.getTokenData(token)
-        if (tokenData.role !== 'ADMIN') {
-            errorCode = 401
-            throw new Error("Somente usuario ADM pode acessar essa funcionalidade");
-        };
-
-        const userDataBase = new UserDataBase();
-        const users = await userDataBase.getAllUser()
+        const token = req.headers.authorization as string
+        
+        const users = await getAllUsersBusiness(token)
 
         res.status(200).send(users)
     } catch (error: any) {

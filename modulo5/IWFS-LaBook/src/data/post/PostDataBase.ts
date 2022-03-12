@@ -18,13 +18,14 @@ export class PostDataBase extends BaseDataBase{
     };
     public async createPost(post: Post): Promise<void> {
         try {
+            const createdAt = new Date()
             await BaseDataBase.connection(postTable)
                 .insert({
                     id: post.getId(),
-                    userId: post.getUserId(),
+                    user_id: post.getUserId(),
                     photo: post.getPhoto(),
                     description: post.getDescription(),
-                    creationDate: post.getCreationDate(),
+                    created_at: post.getCreatedAt(),
                     role: post.getRole()
                 })
         } catch (error: any) {
