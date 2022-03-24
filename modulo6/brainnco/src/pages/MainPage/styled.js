@@ -1,11 +1,9 @@
 import styled from 'styled-components';
-import { backgroundColor } from '../../constants/color';
 
 export const MainContainer = styled.div`
-background-color: ${backgroundColor}
-`
-export const AlertMessage = styled.p`
-position:absolute;
-bottom:0;
-	
+display: grid;
+grid-template-columns: repeat(2, 1fr);
+grid-auto-rows: 100px;
+height: 100%
+}
 `

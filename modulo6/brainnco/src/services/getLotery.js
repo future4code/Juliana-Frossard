@@ -1,11 +1,11 @@
 import axios from 'axios';
 import { BASE_URL } from '../constants/BASE_URL'
 
-const getConcursosLoteria = () => {
+const getLotery = () => {
     const response = axios
-    .get(`${BASE_URL}/loterias-concursos`)
+    .get(`${BASE_URL}/loterias`)
     
     return response.data
 };
 
-export default getConcursosLoteria;
+export default getLotery;
