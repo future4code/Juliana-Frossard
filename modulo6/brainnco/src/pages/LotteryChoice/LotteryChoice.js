@@ -1,30 +1,27 @@
 import React from "react";
 import SelectLottery from "../../components/SelectLottery/SelectLottery";
-import {LotteryChoiceContainer, ContainerImg,LotteryName,LotteryDate} from './styled'
+import {LotteryChoiceContainer, ContainerImg,LotteryName,LotteryDate,LotteryResultData} from './styled'
 import LOGO from '../../assets/img/logo.svg'
 import useRequestData from "../../hooks/useRequestData";
 import { BASE_URL } from "../../constants/BASE_URL";
+import { formatDate } from "../../services/formatDate";
 
-const LotteryChoice = () => {
-    const getLottery = useRequestData([],`${BASE_URL}/loterias`)
-
-    const lotterySelect = getLottery.map((item) => {
-        return <SelectLottery 
-        key={item.id}
-        name={item.nome}/>         
-    })
+const LotteryChoice = (props) => {
+    const lottery = props.lottery
+    const resultId = props.resultId
+    const lotteryResult = props.lotteryResult
+    const date = formatDate(lotteryResult.data)
     
-
     return (
         <LotteryChoiceContainer>
-            {lotterySelect}
+            <SelectLottery lottery={lottery}/>
             <ContainerImg>
             <img src={LOGO}/>
-            <LotteryName>MEGA-SENA</LotteryName>
+            <LotteryName>{lottery.nome}</LotteryName>
             </ContainerImg>
             <div>
             <LotteryDate>Concurso</LotteryDate>
-            <LotteryDate><b>DIA DO CONCURSO</b></LotteryDate>
+            <LotteryDate><b>{resultId.concursoId}-{date}</b></LotteryDate>
             </div>
             
             

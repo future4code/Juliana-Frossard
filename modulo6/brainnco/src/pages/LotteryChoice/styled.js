@@ -23,9 +23,16 @@ text-transform: uppercase;
 margin-left: 1rem;
 `
 export const LotteryDate = styled.p`
+font-size: 1.25rem;
+color: ${letterColor};
+font-weight:300;
+text-transform: uppercase;
+margin-left: 1rem;
+`
+export const LotteryResultData = styled.p`
 font-size: 1rem;
 color: ${letterColor};
-font-weight: 200;
+font-weight:900;
 text-transform: uppercase;
 margin-left: 1rem;
 `
