@@ -8,6 +8,9 @@ import { formatDate } from "../../services/formatDate";
 
 const LotteryChoice = (props) => {
     const lottery = props.lottery
+    console.log('lottery chooice',lottery)
+
+   
     const resultId = props.resultId
     const lotteryResult = props.lotteryResult
     const date = formatDate(lotteryResult.data)

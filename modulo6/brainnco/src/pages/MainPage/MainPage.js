@@ -1,17 +1,17 @@
 import React from "react";
+import useRequestData from "../../hooks/useRequestData";
 import LotteryChooice from "../LotteryChoice/LotteryChoice";
 import LotteryResult from "../LotteryResult/LotteryResult";
 import { MainContainer } from "./styled";
+import { BASE_URL } from "../../constants/BASE_URL";
 
 
 const MainPage = () => {
-    const getLottery = {
-        "id": 1,
-        "nome": "Mega Sena"
-    }
-    const getResultId = {
+    const getLottery = useRequestData([], `${BASE_URL}/loterias`)
+
+    const getLotteryId = {
         "loteriaId": 1,
-        "concursoId": "440"
+        "concursoId": "440"    
     }
     const getResultNumber = {
         "id": "430",
@@ -23,7 +23,7 @@ const MainPage = () => {
             "40",
             "50",
             "60",
-            
+
         ],
         "data": "2021-04-20T00:28:09.426Z"
     }
@@ -31,7 +31,7 @@ const MainPage = () => {
         <MainContainer>
             <LotteryChooice
                 lottery={getLottery}
-                resultId={getResultId}
+                resultId={getLotteryId}
                 lotteryResult={getResultNumber}
             />
             <LotteryResult
