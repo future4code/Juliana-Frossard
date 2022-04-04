@@ -57,7 +57,7 @@ export default class ListaDosUsuarios extends Component {
             <li key={user.id}>{user.name} - <button>Deletar</button></li>)
         return (
             <Container>
-                <Button>Página Inicial</Button>
+                <button onClick={this.props.mudarParaCadastro}>Página Inicial</button>
                 <Card>
                     <h2>Lista de Usuários</h2>
                     <ul>

@@ -1,0 +1,1 @@
+export const base_url_viacep = "https://viacep.com.br/ws"

@@ -1,0 +1,1 @@
+//no tsconfig da aula esta somente o que usaremos, quando faz o init vem todas as dependencias comentadas
