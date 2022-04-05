@@ -1,10 +1,10 @@
 import styled from 'styled-components';
 
-export const ContainerCards = styled.div`
-margin-left: 1.5%;
-margin-top: 2%;
-width: 15% ;
-`
 export const ContainerMovieCard = styled.div`
+margin: 3%;
+width: 13% ;
+border: 1px solid red;
 display: flex;
+flex-direction: row;
+flex-wrap: wrap;
 `

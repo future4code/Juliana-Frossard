@@ -1,6 +1,6 @@
 export const goToMainPage = (navigate) => {
     navigate('/')
 };
-export const goToDeatilPage = (navigate, id) => {
+export const goToDetailPage = (navigate, id) => {
     navigate(`/movie-detail/${id}`)
 };
