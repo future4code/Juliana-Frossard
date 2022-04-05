@@ -9,10 +9,10 @@ const AddRecepiesPage = () => {
 
     return (
         <div>
-            <div>
+            <ScreenContainer>
                 <Typography gutterBottom variant="h4" align="center" color="textPrimary">Adicionar Receita</Typography>
                 <AddRecipesForm />
-            </div>
+            </ScreenContainer>
         </div>
     )
 }
