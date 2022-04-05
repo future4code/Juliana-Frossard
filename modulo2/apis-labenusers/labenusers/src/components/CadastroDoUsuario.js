@@ -44,7 +44,7 @@ export default class CadastroDoUsuario extends React.Component {
         
         return (
             <div>
-                <button>Lista de Usuários</button>
+                <button onClick={this.props.mudarParaLista}>Lista de Usuários</button>
                 <h2>Cadastrar Usuário</h2>
                 <input
                 placeholder = "nome"

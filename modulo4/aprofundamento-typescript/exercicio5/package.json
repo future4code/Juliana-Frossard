@@ -1,0 +1,15 @@
+{
+  "name": "exercicio1",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {},
+  "devDependencies": {
+    "typescript": "^4.5.5"
+  },
+  "scripts": {
+    "start": "node ./index.js"
+  },
+  "author": "Juliana Frossard",
+  "license": "ISC"
+}

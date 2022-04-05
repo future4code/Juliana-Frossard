@@ -1,0 +1,35 @@
+POST http://localhost:3003/signup
+Content-Type: application/json
+
+{
+   "name": "Cinderela",
+   "email": "princesacindy@email.com" ,
+   "password": "fadamadrinha"
+}
+
+###
+
+POST http://localhost:3003/login
+Content-Type: application/json
+
+{
+   "email": "valente@email.com" ,
+   "password": "ursos"
+}
+
+###
+GET http://localhost:3003/user/profile
+
+###
+POST http://localhost:3003/recipe
+Authorization: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImM1NWU4NWQxLWFlZDctNDhkNC1iNzllLTVhZTFhMzJiNTgzZCIsImlhdCI6MTY0NTcyMDgzNiwiZXhwIjoxNjQ1NzIwODM2fQ.hYdafntBXQtgfJMgIDzbF5fogxJEsX09eTtx91AH86A'
+Content-Type: application/json
+
+{
+   "title": "Banana com Leite em pó" ,
+   "description": "Pegue uma banana grande, descasque, corte em rodelas depois adicione leite em pó"
+}
+###
+GET http://localhost:3003/recipe/
+
+###
