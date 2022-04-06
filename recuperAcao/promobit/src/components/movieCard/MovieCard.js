@@ -14,8 +14,7 @@ function MovieCard(props) {
                 <CardActionArea>
                     <CardMedia
                         component="img"
-                        image='https://i.pinimg.com/550x/43/e5/44/43e5440d7f63b378cbe5693a79b55c8b.jpg'
-
+                        image={`https://image.tmdb.org/t/p/original/${props.poster_path}`}
                     />
                     <CardContent>
                         <Typography

@@ -1,10 +1,11 @@
 import React from 'react';
 import { Box } from '@mui/system';
 import Typography from '@mui/material/Typography';
-import FilterButton from './FilterButton';
+import Button from '@mui/material/Button';
+import Stack from '@mui/material/Stack';
 import { ContainerFilterCard } from './styled'
 
-function FilterCard() {
+function FilterCard(props) {
     return (
         <Box
             sx={{
@@ -22,19 +23,21 @@ function FilterCard() {
                         gutterBottom
                         color='text.secondary'
                         component="div"
-                        
+
                     >
                         Milhões de filmes, séries e pessoas para descobrir. Explore já.
                     </Typography>
                 </Box>
-               
+
                 <Typography
                     color='text.secondary'
                 >Filtre por:
                 </Typography>
-                <FilterButton />
-                
-                
+                <Stack spacing={2} direction="row">
+                    <Button variant="contained" color='tertiary'>botao</Button>
+                </Stack>
+
+
             </ContainerFilterCard>
 
         </Box>

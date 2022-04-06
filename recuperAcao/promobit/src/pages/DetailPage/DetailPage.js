@@ -23,6 +23,7 @@ function DetailPage() {
                 vote_average={movie.vote_average}
                 poster_path={movie.poster_path}
                 homepage={movie.homepage}
+                runtime={movie.runtime}
             />
             <MovieCastDetailPage>
                 <Typography variant="h5" component="div">
