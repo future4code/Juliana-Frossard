@@ -1,37 +1,34 @@
 import React from 'react';
-import Card from '@mui/material/Card';
-import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import { CardActionArea } from '@mui/material';
-import { ContainerMovieCard } from './styled'
+import { ContainerMovieCard, CardCOntent } from './styled'
 
 function MovieCard(props) {
 
     return (
         <ContainerMovieCard onClick={props.onClick}>
-            <Card sx={{ maxWidth: 300 }}>
-                <CardActionArea>
-                    <CardMedia
-                        component="img"
-                        image={`https://image.tmdb.org/t/p/original/${props.poster_path}`}
-                    />
-                    <CardContent>
-                        <Typography
-                            gutterBottom
-                            variant="h6"
-                            component="div"
-                        >
-                            {props.title}
-                        </Typography>
-                        <Typography
-                            variant="body1"
-                        >
-                            {props.release_date}
-                        </Typography>
-                    </CardContent>
-                </CardActionArea>
-            </Card>
+            <CardActionArea>
+                <CardMedia
+                    component="img"
+                    image={`https://image.tmdb.org/t/p/original/${props.poster_path}`}
+                />
+                <CardCOntent>
+                    <b><Typography
+                        gutterBottom
+                        variant="body1"
+                        fontSize="bold"
+                        component="div"
+                    >
+                        {props.title}
+                    </Typography></b>
+                    <Typography
+                        variant="body1"
+                    >
+                        {props.known_for_department} - {props.release_date}
+                    </Typography>
+                </CardCOntent>
+            </CardActionArea>
         </ContainerMovieCard>
     );
 }

@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import axios from 'axios';
 
-const useRequest = (initialData, url) => {
+const useRequestsGenres = (initialData, url) => {
     const [data, setData] = useState(initialData)
 
     useEffect(() => {
@@ -16,4 +16,4 @@ const useRequest = (initialData, url) => {
     }, [url])
     return (data)
 }
-export default useRequest;
+export default useRequestsGenres;
