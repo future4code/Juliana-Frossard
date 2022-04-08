@@ -7,6 +7,7 @@ export const ContainerDetailCard = styled.div`
 display: flex ;
 justify-items: space-between;
 padding: 20px 50px;
+
 `
 export const ContainerAvaliation = styled.div`
 display: flex;
@@ -21,8 +22,8 @@ align-items: left;
 justify-content: center;
 `
 export const CardIMG = styled(CardMedia)`
-height: 350px;
-width: 250px;
+height: 500px;
+width: 400px;
 border-radius: 8px;
 `
 export const Title = styled(Typography)`

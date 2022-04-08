@@ -9,9 +9,8 @@ import CastCard from '../../components/CastCard/CastCard';
 import MovieCard from '../../components/MovieCard/MovieCard';
 import DetailCard from '../../components/DetailCard/DetailCard';
 import TrailerCard from '../../components/DetailCard/TrailerCard';
-import { goToDetailPage} from '../../routes/coordinator';
+import { goToDetailPage } from '../../routes/coordinator';
 import { MovieCastDetailPage, ListContainer } from './styled';
-
 
 
 function DetailPage() {
@@ -20,7 +19,7 @@ function DetailPage() {
 
     const movie = useRequest({}, `${BASE_URL}/movie/${params.id}${api_key}`)
     const casts = useRequestCast([], `${BASE_URL}/movie/${params.id}/credits${api_key}`)
-    const recommendations = useRequestData([],`${BASE_URL}/movie/${params.id}/recommendations${api_key}`)
+    const recommendations = useRequestData([], `${BASE_URL}/movie/${params.id}/recommendations${api_key}`)
     
     const onClickCard = (id) => {
         goToDetailPage(navigate, id)
@@ -49,11 +48,12 @@ function DetailPage() {
             />
         )
     });
-   
-
+    
+        
     return (
         <div>
             <DetailCard
+                key={movie.title}
                 title={movie.title}
                 overview={movie.overview}
                 genres={movie.genres}
@@ -68,21 +68,30 @@ function DetailPage() {
                 <Typography variant="h5" component="div">
                     Elenco original:
                 </Typography>
-                <ListContainer>
-                    {cast}
-                </ListContainer>
 
+                <ListContainer>
+                    
+                    {cast}
+                    
+                    
+                </ListContainer>
+                <Typography
+                    gutterBottom
+                    variant="h5"
+                    component="div">
+                    Trailer
+                </Typography>
                 <TrailerCard
-                    poster_path={movie.poster_path}
-                />
-                <Typography 
-               gutterBottom 
-               variant="h5" 
-               component="div">
+                params={params}/>
+    )
+                <Typography
+                    gutterBottom
+                    variant="h5"
+                    component="div">
                     Recomendações:
                 </Typography>
                 <ListContainer>
-                {recommendation}
+                    {recommendation}
                 </ListContainer>
             </MovieCastDetailPage>
 

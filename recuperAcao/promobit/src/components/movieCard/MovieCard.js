@@ -18,15 +18,16 @@ function MovieCard(props) {
                     image={`https://image.tmdb.org/t/p/original/${props.poster_path}`}
                 />
                 <CardCOntent>
-                    <b><Typography
-                        gutterBottom
-                        variant='subtitle2'
+                <Typography
+                        variant="body1"
+                        fontWeight='bold'
+                        component="div"
                     >
                         {props.title}
-                    </Typography></b>
+                    </Typography>
                     <Typography
                     align='center'
-                        variant="body1"
+                        variant="body2"
                     >
                         {props.known_for_department}  ({date()})
                     </Typography>

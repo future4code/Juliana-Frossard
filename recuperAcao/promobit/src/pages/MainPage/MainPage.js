@@ -10,7 +10,6 @@ import { useState } from 'react';
 import { goToDetailPage } from '../../routes/coordinator';
 import {ListContainer} from './styled'
 
-
 function MainPage() {
     const navigate = useNavigate()
     const [page, setPage] = useState(1)
