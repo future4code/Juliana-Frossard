@@ -8,7 +8,9 @@ import { goToMainPage } from '../../routes/coordinator';
 import { useNavigate } from 'react-router-dom';
 
 function Header() {
+
   const navigate = useNavigate()
+  
   return (
     <Box sx={{ flexGrow: 1 }}>
       <AppBar color='secondary' position="static">

@@ -1,32 +1,57 @@
 import React from 'react';
-import DetailCard from '../../components/DetailCard/DetailCard';
+import { useNavigate, useParams } from 'react-router-dom';
 import Typography from '@mui/material/Typography';
-import { MovieCastDetailPage, ListContainer } from './styled'
-import TrailerCard from '../../components/DetailCard/TrailerCard';
-import { useParams } from 'react-router-dom'
-import useRequest from '../../hooks/useRequest'
-import useRequestCast from '../../hooks/useRequestCast'
 import { api_key, BASE_URL } from '../../constants/urls';
+import useRequest from '../../hooks/useRequest';
+import useRequestCast from '../../hooks/useRequestCast';
+import useRequestData from '../../hooks/useRequestData';
+import CastCard from '../../components/CastCard/CastCard';
 import MovieCard from '../../components/MovieCard/MovieCard';
+import DetailCard from '../../components/DetailCard/DetailCard';
+import TrailerCard from '../../components/DetailCard/TrailerCard';
+import { goToDetailPage} from '../../routes/coordinator';
+import { MovieCastDetailPage, ListContainer } from './styled';
+
+
 
 function DetailPage() {
     const params = useParams()
+    const navigate = useNavigate()
+
     const movie = useRequest({}, `${BASE_URL}/movie/${params.id}${api_key}`)
-    console.log(movie)
-    const casts = useRequestCast([],`${BASE_URL}/movie/${params.id}/credits${api_key}` )
-    console.log(casts)
+    const casts = useRequestCast([], `${BASE_URL}/movie/${params.id}/credits${api_key}`)
+    const recommendations = useRequestData([],`${BASE_URL}/movie/${params.id}/recommendations${api_key}`)
+    
+    const onClickCard = (id) => {
+        goToDetailPage(navigate, id)
+    }
+
     const cast = casts.map((item) => {
-        return(
-            <MovieCard 
-            key={item.cast_id}
-            release_date={item.character}
-            title={item.name}
-            poster_path={item.profile_path}
-            known_for_department={item.known_for_department}
+        return (
+            <CastCard
+                key={item.cast_id}
+                character={item.character}
+                name={item.name}
+                profile_path={item.profile_path}
+                known_for_department={item.known_for_department}
             />
         )
-    })
-return (
+    });
+
+    const recommendation = recommendations.map((item) => {
+        return (
+            <MovieCard
+                key={item.id}
+                release_date={item.release_date}
+                title={item.title}
+                poster_path={item.poster_path}
+                onClick={() => onClickCard(item.id)}
+            />
+        )
+    });
+   
+
+    return (
         <div>
             <DetailCard
                 title={movie.title}
@@ -44,14 +69,23 @@ return (
                     Elenco original:
                 </Typography>
                 <ListContainer>
-                {cast}
+                    {cast}
                 </ListContainer>
-                
-                <TrailerCard 
-                poster_path={movie.poster_path}
+
+                <TrailerCard
+                    poster_path={movie.poster_path}
                 />
+                <Typography 
+               gutterBottom 
+               variant="h5" 
+               component="div">
+                    Recomendações:
+                </Typography>
+                <ListContainer>
+                {recommendation}
+                </ListContainer>
             </MovieCastDetailPage>
-            
+
         </div>
     )
 };

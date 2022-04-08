@@ -5,7 +5,11 @@ import { CardActionArea } from '@mui/material';
 import { ContainerMovieCard, CardCOntent } from './styled'
 
 function MovieCard(props) {
-
+    
+    const date = () => {
+        const releaseDate = props.release_date
+        return releaseDate.split('-').reverse().join('/');
+    }
     return (
         <ContainerMovieCard onClick={props.onClick}>
             <CardActionArea>
@@ -16,16 +20,15 @@ function MovieCard(props) {
                 <CardCOntent>
                     <b><Typography
                         gutterBottom
-                        variant="body1"
-                        fontSize="bold"
-                        component="div"
+                        variant='subtitle2'
                     >
                         {props.title}
                     </Typography></b>
                     <Typography
+                    align='center'
                         variant="body1"
                     >
-                        {props.known_for_department} - {props.release_date}
+                        {props.known_for_department}  ({date()})
                     </Typography>
                 </CardCOntent>
             </CardActionArea>
