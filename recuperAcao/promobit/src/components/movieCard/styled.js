@@ -12,4 +12,5 @@ export const CardCOntent = styled(CardContent)`
   align-items: center;
   justify-content: center;
   height: 60px;
+  
 `

@@ -1,46 +1,72 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Box } from '@mui/system';
 import Typography from '@mui/material/Typography';
-import Button from '@mui/material/Button';
-import Stack from '@mui/material/Stack';
-import { ContainerFilterCard } from './styled'
+import { ContainerFilterCard, ContainerButton, 
+    ButtonStyled, ContainerInput, Input } from './styled'
 
 function FilterCard(props) {
+    const [query, setQuery] = useState("");
+
+    const genres = props.genres
+        
+    const genre = genres.map((item) => {
+        return (
+            <ButtonStyled
+                key={item.id}
+                variant="outlined"
+                size="small"
+                color='tertiary'
+                focusVisible
+            >{item.name}
+            </ButtonStyled>
+        )
+    })
+
+
     return (
-        <Box
+        <ContainerFilterCard
             sx={{
-                height: 350,
                 bgcolor: 'primary.main'
             }}>
-            <ContainerFilterCard>
-                <Box sx={{
-                    width: 781,
-                    height: 112,
-                    bgcolor: 'primary.main'
-                }}>
-                    <Typography
-                        variant="h3"
-                        gutterBottom
-                        color='text.secondary'
-                        component="div"
-
-                    >
-                        Milhões de filmes, séries e pessoas para descobrir. Explore já.
-                    </Typography>
-                </Box>
-
+            <Box sx={{
+                width: 781,
+                height: 112,
+                bgcolor: 'primary.main'
+            }}>
                 <Typography
+                    variant="h3"
+                    gutterBottom
                     color='text.secondary'
-                >Filtre por:
+                    component="div"
+
+                >
+                    Milhões de filmes, séries e pessoas para descobrir. Explore já.
                 </Typography>
-                <Stack spacing={2} direction="row">
-                    <Button variant="contained" color='tertiary'>botao</Button>
-                </Stack>
+            </Box>
+                      
+            <Typography
+                gutterBottom
+                color='text.secondary'
+                variant='h6'
+            >Filtre por:
+            </Typography>
+            <ContainerInput>
+            <Input
+            placeholder='Pesquisa'
+            value={props.query}
+            onChange={props.upDateQuery}
+            />
+            </ContainerInput>
+
+            <ContainerButton>
+                {genre}
+            </ContainerButton>
 
 
-            </ContainerFilterCard>
 
-        </Box>
+
+
+        </ContainerFilterCard>
     )
 };
 export default FilterCard;

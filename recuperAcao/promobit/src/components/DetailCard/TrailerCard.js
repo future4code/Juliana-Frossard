@@ -18,6 +18,21 @@ function TrailerCard(props) {
         }
         getVideo()
     },[params])
+    // const result = () => {
+    //     if(trailer){
+    //         return <iframe
+    //         title="Trailer Original"
+    //         id="ytplayer"
+    //         type="text/html"
+    //         width="907"
+    //         height="510"
+    //         marginRigth="710"
+    //         src={`http://www.youtube.com/embed/${trailer.key}?autoplay=1`}
+    //         //${trailer.key}
+    //         frameborder="0"
+    //       />
+    //     }
+    // }
 
     
     return (

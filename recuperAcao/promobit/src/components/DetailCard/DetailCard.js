@@ -1,11 +1,11 @@
 import React from 'react';
 import { Box } from '@mui/system';
 import Typography from '@mui/material/Typography';
-import { ContainerDetailCard, ContainerAvaliation,InfoContainer,
-    CardIMG,Title,DetailInformation } from './styled'
 import RatingCard from '../RatingCard/RatingCard';
-
-
+import {
+    ContainerDetailCard, ContainerAvaliation, InfoContainer,
+    CardIMG, Title, DetailInformation
+} from './styled'
 
 function DetailCard(props) {
 
@@ -18,8 +18,9 @@ function DetailCard(props) {
     }
 
     const date = () => {
-        const releaseDate = props.release_date
-        return releaseDate.split('-').reverse().join('/');
+        if(props.release_date){
+            return props.release_date.split('-').reverse().join('/');
+        }
     }
 
     const genre = () => {
@@ -31,8 +32,6 @@ function DetailCard(props) {
             )
         }
     }
-
-
     return (
 
         <Box
@@ -52,22 +51,19 @@ function DetailCard(props) {
                         {props.title}
                     </Title>
                     <DetailInformation variant="body2" color="text.secondary">
-                   <Title>{props.release_date}</Title> 
+                        <Title>{date()}</Title>
                     </DetailInformation>
                     <DetailInformation variant="body2" color="text.secondary">
-                        {genre()} 
-                        <Title>{runtime()}</Title> 
+                        {genre()}
+                        <Title>{runtime()}</Title>
                     </DetailInformation>
                     <RatingCard vote_average={props.vote_average} />
                     <DetailInformation>
                         <Title variant="h5" color="text.secondary">Sinopse</Title>
                     </DetailInformation>
-                    
                     <Title variant="body1" color="text.secondary">
                         {props.overview}
                     </Title>
-                    
-                    
                 </InfoContainer>
             </ContainerDetailCard >
         </Box >
