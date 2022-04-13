@@ -1,8 +1,7 @@
-export class Products {
+export class Product {
     constructor(
         private id: string,
         private name: string,
-        private tags: string[]
 
     ) { }
     public getId = () => {
@@ -13,14 +12,11 @@ export class Products {
         return this.name
     }
 
-    public getTags = () => {
-        return this.tags
-    }
-    static productModel(data: any): Products {
-        return new Products(
+
+    static productModel(data: any): Product {
+        return new Product(
             data.id,
             data.name,
-            data.tags
         )
     }
 }

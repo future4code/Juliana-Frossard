@@ -1,13 +1,20 @@
-export class Tags {
+export class Tag {
+
     constructor(
-        private id: string,
-        private name: string
+        private productId: string,
+        private name: string[]
     ) { }
-    public getId = () => {
-    return this.id
-}
-      
-      public getName = () =>  {
-    return this.name
-}
+
+    public getName = () => {
+        return this.name
     }
+    public getProductId = () => {
+        return this.productId
+    }
+    static tagModel(data: any): Tag {
+        return new Tag(
+            data.id,
+            data.name
+        )
+    }
+}
