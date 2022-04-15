@@ -1,29 +1,50 @@
 import { BaseDataBase } from "../BaseDataBase";
-import { Product } from "../../model/products";
+import { Product, ProductTag } from "../../model/products";
 import { products } from "../table";
 
 export class ProductsDataBase extends BaseDataBase {
 
-    public async createProduct(product: Product): Promise<void> {
+    public async createProduct(product: Product): Promise<Product> {
         try {
-            await BaseDataBase.connection(products)
+            await this.getConnection()
                 .insert({
                     id: product.getId(),
                     name: product.getName(),
                 })
+                .into(products)
+
+            return product;
 
         } catch (error: any) {
             throw new Error(error.sqlMessage || error.message);
         }
     }
-    public async findProductbyData(data: string): Promise<Product> {
+    public async findProductByName(name: string): Promise<any> {
         try {
-            const result = await BaseDataBase.connection(products)
+            const result = await this.getConnection()
                 .select('*')
-                .where({ id: data } || { name: data })
-            return result[0] && Product.productModel(result[0])
+                .from(products)
+                .where({ name })
+
+            return result[0];
         } catch (error: any) {
             throw new Error(error.sqlMessage || error.message);
         }
     }
+    public async searchProductById(id: string): Promise<any> {
+        try {
+            const product = await this.getConnection()
+            .select('*')
+            .from(products)
+            .where({id})
+
+            return product[0]
+
+        } catch (error: any) {
+            throw new Error(error.sqlMessage || error.message);
+        }
+    }
+    
+
+
 }

@@ -1,20 +1,21 @@
 export class Tag {
 
     constructor(
-        private productId: string,
-        private name: string[]
+        private userId: string,
+        private name: string
     ) { }
+    public getUserId() {
+        return this.userId
+    }
 
-    public getName = () => {
+    public getName() {
         return this.name
     }
-    public getProductId = () => {
-        return this.productId
-    }
-    static tagModel(data: any): Tag {
+
+
+    static toPostModel(data: any): Tag {
         return new Tag(
-            data.id,
-            data.name
-        )
+            data.userId,
+            data.name)
     }
 }

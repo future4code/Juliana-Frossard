@@ -1,8 +1,30 @@
-### 
+### adicionar produtos
 POST http://localhost:3003/products
 Content-Type: application/json
 
 {
-    "name": "VESTIDO TRICOT CHEVRON",
-    "tags": ["balada", "neutro", "delicado", "festa"]
+    "name": "VESTIDO SLIPDRESS CETIM",
+    "tags": ["balada", "metal", "boho", "descolado", "passeio"]
+}
+
+### buscar produto por id
+GET http://localhost:3003/products/search
+Content-Type: application/json
+
+{
+    "tag":"metal"
+}
+### buscar produto por nome
+GET http://localhost:3003/products/name
+Content-Type: application/json
+
+{
+    "name":"VESTIDO SLIPDRESS CETIM"
+}
+### buscar produto por tag
+GET http://localhost:3003/products/tag
+Content-Type: application/json
+
+{
+    "name":"metal"
 }
