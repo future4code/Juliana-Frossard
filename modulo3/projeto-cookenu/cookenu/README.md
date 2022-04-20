@@ -32,4 +32,3 @@ Página de Cadastro (inicial)
 
 Página do Feed (inicial)
 ![Página de SignUp](img/feed.JPG)
-

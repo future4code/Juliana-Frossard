@@ -1,0 +1,31 @@
+.ContainerMatchButton{
+display: flex;
+justify-content: space-evenly;
+}
+
+/* .MatchButtonNo{
+    background-color: red;
+    border: none;
+    color:white;
+    border-radius: 30px 30px 30px;
+    width: 50px;
+    height: 50px;
+}
+.MatchButtonNo:hover{
+    background-color: rgba(253, 23, 23, 0.692);
+    border: 2px solid rgb(251, 19, 19);
+} */
+
+
+.MatchButtonYes{
+background-color: green;
+border: none;
+color:white;
+border-radius: 30px 30px 30px;
+width: 50px;
+height: 50px;
+}
+.MatchButtonYes:hover{
+    background-color: chartreuse;
+    border: 2px solid darkgreen;
+}
