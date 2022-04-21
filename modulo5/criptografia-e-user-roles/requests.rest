@@ -1,0 +1,35 @@
+# @name signup
+
+POST http://localhost:3003/user/signup
+Content-Type: application/json
+
+{
+   "email": "sandra@email.com" ,
+   "password": "sandra"
+}
+
+###
+
+@id = {{signup.response.body.newUser.id}}
+
+PUT http://localhost:3003/user/edit/{{id}}
+Content-Type: application/json
+
+{
+   "name": "Harry Osbourne" 
+}
+
+###
+POST http://localhost:3003/user/login
+Content-Type: application/json
+
+{
+   "email": "sandra@email.com" ,
+   "password": "maria"
+}
+
+###
+GET http://localhost:3003/user/profile
+Authorization: 
+
+

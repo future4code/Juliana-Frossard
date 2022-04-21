@@ -1,4 +1,4 @@
-## **Projeto Cookenu**
+# **Projeto Cookenu**
 
 
 ## O que é:
@@ -21,3 +21,14 @@ http://foolish-hill.surge.sh/login
 ## Usuário para testes:
 - *email:* usuarioteste@email.com,
 - *senha:* 123456
+
+## Imagens:
+
+Página de Login (inicial)
+![Página de Login](img/login.JPG)
+
+Página de Cadastro (inicial)
+![Página de SignUp](img/signup.JPG)
+
+Página do Feed (inicial)
+![Página de SignUp](img/feed.JPG)
