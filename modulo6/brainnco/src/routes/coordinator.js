@@ -1,3 +1,4 @@
-export const goToLotterySelect = (lotteryName) =>{
-    navigate.push(`/${lotteryName}`)
+
+export const goToLotterySelect = (navigate, id) =>{
+    navigate.push(`/${id}`)
 }

@@ -1,12 +1,21 @@
 import axios from 'axios';
 import { BASE_URL } from '../constants/BASE_URL'
 
-const getResultNumber = async (id) => {
-    const data = await axios
-        .get(`${BASE_URL}/concursos/${id}`)
+//pegar um concurso especifico com o id da loteria
+export const getResultNumber = (setData, id) => {
 
-    return data;
-
+    axios.get(`${BASE_URL}/concursos/${id}`)
+        .then((resp) => {
+            setData(resp.data.numeros)
+        })
+        .catch((err) => {
+            console.log(err.message)
+            window.alert('Ocorreu um erro, tente novamente')
+        })
 };
 
-export default getResultNumber;
+export const getDateResult = async(id) => {
+    await axios.get(`${BASE_URL}/concursos/${id}`)
+}
+
+
