@@ -4,7 +4,7 @@ import LOGO from '../../assets/img/logo.svg'
 import { BASE_URL } from "../../constants/BASE_URL";
 import { getLotteries } from "../../services/getLotteries";
 import { getLotteryResults } from "../../services/getLotteryResults";
-import { getResultNumber } from "../../services/getResultNumber";
+import { getDateResult, getResultNumber } from "../../services/getResultNumber";
 import {
     MainContainer, LotteryResultContainer, Alert,
     NumberCardContainer, BallContainer, Ball,
@@ -13,23 +13,23 @@ import {
 } from "./styled";
 
 const MainPage = () => {
-    const [selected, setSelected] = useState({ id: 0, nome: 'Mega Sena' })
-    const [selectLoto, setSelectLoto] = useState([])
-    const [selectLoterry, setSelectLoterry] = useState([])
-    const [lotoNumbers, setLotoNumbers] = useState([])
+    const [selected, set_selected] = useState({ id: 0, nome: 'Mega Sena' })
+    const [selectLoto, set_selectLoto] = useState([])
+    const [selectLotoTypes, set_selectLotoTypes] = useState([])
+    const [lotoNumbers, set_lotoNumbers] = useState([])
 
     useEffect(() => {
-        getLotteries(setSelectLoto)
-        getLotteryResults(setSelectLoterry)
+        getLotteries(set_selectLoto)
+        getLotteryResults(set_selectLotoTypes)
     }, [selected])
 
     useEffect(() => {
-        selectLoterry.filter((item) => {
+        selectLotoTypes.filter((item) => {
             if (item.loteriaId === selected.id) {
-                getResultNumber(setLotoNumbers, item.concursoId)
+                getResultNumber(set_lotoNumbers, item.concursoId)
             }
         })
-    }, [setSelectLoterry])
+    }, [selectLotoTypes])
 
     const renderSelected = selectLoto && selectLoto.map((item) => {
         return (
@@ -37,23 +37,20 @@ const MainPage = () => {
                 {item.nome.toUpperCase()}</option>
         )
     })
-
+    
     const renderedNumbers = lotoNumbers.map((number) => {
         return (
             <Ball key={number}>{number}</Ball>
-        )
-    })
-
+        )    })
+    
     const onChangeSelect = (event) => {
         selectLoto.filter((item) => {
             if (event.target.value === item.id.toString()) {
-                setSelected({ id: item.id, nome: item.nome.toUpperCase() })
+                set_selected({ id: item.id, nome: item.nome.toUpperCase() })
             }
         })
     }
-
-
-    return (
+       return (
         <MainContainer color={selected.id}>
             <LotteryChoiceContainer color={selected.id}>
                 <SelectButton value onChange={onChangeSelect}>
@@ -65,6 +62,7 @@ const MainPage = () => {
                 </ContainerImg>
                 <div>
                     <LotteryDate><b>Concurso - 430</b></LotteryDate>
+                    
                 </div>
             </LotteryChoiceContainer>
             <LotteryResultContainer>
